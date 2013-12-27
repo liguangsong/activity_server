@@ -1,0 +1,26 @@
+%h1活动通
+%div(class="index-action" style="width:1050px;height:400px;background-color:#e8e8e8;margin:10%;padding:10px" )
+  %h2(class="header-left")
+    管理员注册
+  %a(ng-click="register()"class="header-right"style="right:20%;margin:30px" )
+  %div(class="input-prepend"style="margin:30px" )
+    = form_for :admins,url: admins_path,method: :post do |f|
+      = f.label '帐  号',:class=>"add-on",:style=>"height:10%;width:100px"
+      = f.text_field :name,:style=>"height:10%;width:100%"
+      %br
+      = f.label "密  码",:class=>"add-on",:style=>"height:10%;width:100px"
+      = f.text_field :password ,:type=>"password",:style=>"height:10%;width:100%"
+      %br
+      = f.label '确认密码',:class=>"add-on",:style=>"height:10%;width:100px"
+      = f.text_field :password_confirmation,:type=>"password",:style=>"height:10%;width:100%"
+      %br
+      = f.label '密保问题',:class=>"add-on",:style=>"height:10%;width:100px"
+      = f.text_field :question,:style=>"height:10%;width:100%"
+      %br
+      = f.label '密保答案',:class=>"add-on",:style=>"height:10%;width:100px"
+      = f.text_field :answer,:style=>"height:10%;width:100%"
+      %br
+      %div(style="text-align:center;")
+      %br
+      = f.submit "提 交", class: "btn-primary",:style=>"width:130%"
+  %br
