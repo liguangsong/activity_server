@@ -1,12 +1,12 @@
 %h1
   活动通
-%p(class="header-right"style="margin-top:1%")
-  你好，
-  =@user[:name]
-  =link_to '退出',new_session_path
-%div(class="index-action" style="width:1050px;height:500px;background-color:#e8e8e8;margin-left:5%;margin-top:2%;padding:10px" )
-  = form_for :users,url:new_users_path do |f|
-    %div(class="header-left"style="margin-left:1px;margin-top:10px"  )
-      管理用户
-      =f.submit '添加用户',class:'button';
-=flash[:error]
+-#%p(class="header-right"style="margin-top:1%")
+-#  你好，
+-#  =@user[:name]
+-#  =link_to '退出',new_session_path
+-#%div(class="index-action" style="width:1050px;height:500px;background-color:#e8e8e8;margin-left:5%;margin-top:2%;padding:10px" )
+-#  = form_for :users,url:new_users_path do |f|
+-#    %div(class="header-left"style="margin-left:1px;margin-top:10px"  )
+-#      管理用户
+-#      =f.submit '添加用户',class:'button';
+-#=flash[:error]
