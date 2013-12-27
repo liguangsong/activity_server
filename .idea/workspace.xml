@@ -7,15 +7,15 @@
     <file path="/users.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388022904821" ignored="false" />
     <file path="/routes.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388116898041" ignored="false" />
     <file path="/users_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388121615265" ignored="false" />
-    <file path="/new.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388126985570" ignored="false" />
-    <file path="/Gemfile" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388109821624" ignored="false" />
+    <file path="/new.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388135421280" ignored="false" />
+    <file path="/Gemfile" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388131023064" ignored="false" />
     <file path="$USER_HOME$/gongcheng/activity_server/app/controllers/users_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388026267972" ignored="false" />
     <file path="$USER_HOME$/gongcheng/activity_server/config/routes.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388026349768" ignored="false" />
     <file path="/sessions_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388124999569" ignored="false" />
-    <file path="/show.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388116285457" ignored="false" />
+    <file path="/show.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388137056917" ignored="false" />
     <file path="/application.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388041012191" ignored="false" />
     <file path="/Dummy.txt" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388041050049" ignored="false" />
-    <file path="/admins_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388113109217" ignored="false" />
+    <file path="/admins_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388130806591" ignored="false" />
     <file path="/user.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388129274875" ignored="false" />
     <file path="/.rvmrc" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388123693081" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,28 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/new.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="30" selection-start="1087" selection-end="1093" vertical-scroll-proportion="-10.392858">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="66" selection-start="528" selection-end="528" vertical-scroll-proportion="0.33391917">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="show.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/show.haml">
+        <entry file="file://$PROJECT_DIR$/app/views/admins/show.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="70" selection-start="442" selection-end="442" vertical-scroll-proportion="-8.142858">
+            <state line="27" column="31" selection-start="907" selection-end="907" vertical-scroll-proportion="-10.714286">
               <folding />
             </state>
           </provider>
@@ -81,16 +63,16 @@
       <file leaf-file-name="new.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/sessions/new.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="52" selection-start="1017" selection-end="1143" vertical-scroll-proportion="-14.535714">
+            <state line="1" column="114" selection-start="121" selection-end="121" vertical-scroll-proportion="-0.6785714">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admins/new.haml">
+      <file leaf-file-name="admins_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/admins_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="30" selection-start="923" selection-end="931" vertical-scroll-proportion="-10.357142">
+            <state line="16" column="58" selection-start="328" selection-end="328" vertical-scroll-proportion="0.53427064">
               <folding />
             </state>
           </provider>
@@ -99,7 +81,16 @@
       <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="18" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0">
+            <state line="15" column="45" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/users/new.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="30" selection-start="1087" selection-end="1093" vertical-scroll-proportion="-14.928572">
               <folding />
             </state>
           </provider>
@@ -115,15 +106,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/db/migrate/20131227022102_create_admins.rb" />
         <option value="dbtable:/2bf99a64/54317360-b95f-48c0-9e30-7fd1bf674c4f/..admins" />
         <option value="dbtable:/2bf99a64/54317360-b95f-48c0-9e30-7fd1bf674c4f/..users" />
         <option value="$PROJECT_DIR$/db/migrate/20131226020729_create_users.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/admins_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/admins/new.haml" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/admins/show.haml" />
         <option value="$PROJECT_DIR$/app/views/users/show.haml" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/.rvmrc" />
@@ -131,6 +118,10 @@
         <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/users/new.haml" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/controllers/admins_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/sessions/new.haml" />
+        <option value="$PROJECT_DIR$/app/views/admins/show.haml" />
       </list>
     </option>
   </component>
@@ -625,14 +616,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1372" height="745" extended-state="6" />
+    <frame x="-3" y="0" width="1372" height="745" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.325" sideWeight="0.6728499" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3242424" sideWeight="0.6728499" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2" sideWeight="0.6728499" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32954547" sideWeight="0.6728499" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -711,30 +702,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/admin.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/2bf99a64/54317360-b95f-48c0-9e30-7fd1bf674c4f/..users">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/admins_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="26" selection-start="187" selection-end="187" vertical-scroll-proportion="0.30052724">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -773,16 +740,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admins/show.haml">
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="405" selection-end="405" vertical-scroll-proportion="0.46780303">
+        <state line="10" column="66" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sessions/new.haml">
+    <entry file="dbDummy://dbtable:/2bf99a64/54317360-b95f-48c0-9e30-7fd1bf674c4f/..users">
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="52" selection-start="1017" selection-end="1143" vertical-scroll-proportion="-14.535714">
+        <state line="3" column="28" selection-start="79" selection-end="79" vertical-scroll-proportion="0.098615915">
           <folding />
         </state>
       </provider>
@@ -794,37 +771,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/show.haml">
+    <entry file="file://$PROJECT_DIR$/app/views/sessions/new.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="70" selection-start="442" selection-end="442" vertical-scroll-proportion="-8.142858">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admins/new.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="923" selection-end="931" vertical-scroll-proportion="-10.357142">
+        <state line="1" column="114" selection-start="121" selection-end="121" vertical-scroll-proportion="-0.6785714">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/new.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="30" selection-start="1087" selection-end="1093" vertical-scroll-proportion="-10.392858">
+        <state line="22" column="30" selection-start="1087" selection-end="1093" vertical-scroll-proportion="-14.928572">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/users/show.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="66" selection-start="528" selection-end="528" vertical-scroll-proportion="0.33391917">
+        <state line="12" column="70" selection-start="442" selection-end="442" vertical-scroll-proportion="0.4318182">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="45" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admins/new.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="37" selection-start="1129" selection-end="1155" vertical-scroll-proportion="0.7916667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admins/show.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="31" selection-start="907" selection-end="907" vertical-scroll-proportion="-10.714286">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admins_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="58" selection-start="328" selection-end="328" vertical-scroll-proportion="0.53427064">
           <folding />
         </state>
       </provider>

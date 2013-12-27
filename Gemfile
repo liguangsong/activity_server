@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 gem 'haml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

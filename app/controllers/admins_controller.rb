@@ -14,6 +14,7 @@ class AdminsController < ApplicationController
 
   def show
     @admin = Admin.find(params[:id])
+    @user = User.paginate(page: params[:page], per_page: 9)
   end
 
   private
