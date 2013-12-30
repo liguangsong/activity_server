@@ -5,26 +5,26 @@
     你好，
     =@admin[:name]
     =link_to '退出',new_session_path
-  %div(class="index-action" style="width:1050px;height:450px;background-color:#E0E0E0;margin-left:10%;margin-top:2%;padding:5px;padding-bottom:2px" )
+  %div(class="index-action" style="width:1050px;height:450px;background-color:#F0F0F0;margin-left:10%;margin-top:2%;padding:0px;padding-bottom:2px" )
     %div(class="header-left"style="margin-left:1px;margin-top:10px"  )
       管理用户
-      %button
-        =link_to '添加用户',new_user_path ,:style =>'color:black'
+      %button(style="margin-left:3px" )
+        =link_to '添加用户',new_user_path(@admin[:name]) ,:style =>'color:black'
     %table(class="table table-style"style="margin-top:1px;position:absolute;top:9%" )
       %tbody
-        %tr(style="background-color:#F0F0F0" )
+        %tr
           %th 编号
           %th 用户名
           %th
         %br
           -@user.each do |t|
-            %tr(style="background-color:#F0F0F0" )
+            %tr
               %th
                 =t.id
               %th
                 =t.name
               %th(style="width:20%" )
-                =link_to '删除'
+                =link_to '删除'  ,admin_path(t.id),method: :delete, data: { confirm: 'Are you sure?'}
                 =link_to '修改密码'
             %br
     %div(style='font-size:12px;position:absolute;right:10%;bottom:-5px;')

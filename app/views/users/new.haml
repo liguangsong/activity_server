@@ -2,7 +2,7 @@
 %div(class="index-action" style="text-align:center;width:550px;background-color:#e8e8e8;margin-left:30%;margin-top:5%;padding:20px")
   %div(class="index-login"style="margin-top:10px" )
     %div(class="input-prepend"style="margin:30px")
-      = form_for :users,url: users_path do |f|
+      = form_for :users,url: users_path(@name) do |f|
         = f.label '帐  号',:class=>"add-on",:style=>"height:10%;width:100px"
         = f.text_field :name,:style=>"height:10%;width:70%"
         %br
@@ -30,7 +30,10 @@
       .label-warning(style="width:70%;margin-left:15%;background-color:#FFE4E1;" )
         %p(style="color:#7E4F05;font-size:16px" )
           = @user.errors.full_messages.first
-
+    -if flash[:error]
+      .label-warning(style="width:70%;margin-left:15%;background-color:#FFE4E1;" )
+        %p(style="color:#7E4F05;font-size:16px" )
+          密码或用户名错误
 
 
 

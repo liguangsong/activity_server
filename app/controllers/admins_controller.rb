@@ -13,8 +13,16 @@ class AdminsController < ApplicationController
   end
 
   def show
-    @admin = Admin.find(params[:id])
+    @admin = Admin.find('1')
     @user = User.paginate(page: params[:page], per_page: 9)
+  end
+
+  def destroy
+
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to admin_path
+
   end
 
   private
