@@ -3,6 +3,9 @@ ActivityServer::Application.routes.draw do
   resources :sessions
   resources :admins
   root 'sessions#new'
+  post 'admins_add_new_user'=>'admins#add_new_user'
+  get 'admins_add_new_user_page'=>'admins#add_new_user_page'
+  get 'admins_quit'=>'admins#quit'
   #get 'users'=>'users#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

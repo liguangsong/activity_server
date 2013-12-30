@@ -11,20 +11,30 @@ class SessionsController < ApplicationController
   def  create
     name= params[:session][:name].to_s;
     password= params[:session][:password].to_s;
-    @user=Admin.find_by(name:name)
-    if @user==nil
+    @admin=Admin.find_by(name:name)
+    @user=User.find_by(name:name)
+    if @user==nil&&@admin==nil
       flash.now[:error]='error'
       render 'new'
-    else
-      if password==@user[:password]
-        redirect_to admin_path(@user[:id])
+      return
+    end
+    if @admin!=nil&&password==@admin[:password]
+        session[:user]=@admin[:id]
+        redirect_to admin_path(@admin[:id])
+        return
+    end
+    if @user!=nil&&password==@user[:password]
+       session[:user]=@user[:id]
+       redirect_to user_path(@user[:id])
+      return
       else
-        flash.now[:error]='error'
-        render action:'new'
-      end
+      flash.now[:error]='error'
+      render 'new'
     end
   end
-
-
-
 end
+
+
+
+
+
