@@ -19,12 +19,12 @@ class SessionsController < ApplicationController
       return
     end
     if @admin!=nil&&password==@admin[:password]
-        session[:user]=@admin[:id]
+        session[:user]=@admin[:name]
         redirect_to admin_path(@admin[:id])
         return
     end
     if @user!=nil&&password==@user[:password]
-       session[:user]=@user[:id]
+       session[:user]=@user[:name]
        redirect_to user_path(@user[:id])
       return
       else

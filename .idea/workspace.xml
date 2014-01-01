@@ -5,23 +5,27 @@
     <ignored path="activity_server.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/users.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388022904821" ignored="false" />
-    <file path="/routes.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388395482326" ignored="false" />
+    <file path="/routes.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388469335811" ignored="false" />
     <file path="/users_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388369405233" ignored="false" />
     <file path="/new.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388382832623" ignored="false" />
     <file path="/Gemfile" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388131023064" ignored="false" />
     <file path="$USER_HOME$/gongcheng/activity_server/app/controllers/users_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388026267972" ignored="false" />
     <file path="$USER_HOME$/gongcheng/activity_server/config/routes.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388026349768" ignored="false" />
-    <file path="/sessions_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388396719908" ignored="false" />
-    <file path="/show.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388395430840" ignored="false" />
+    <file path="/sessions_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388453945616" ignored="false" />
+    <file path="/show.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388468801510" ignored="false" />
     <file path="/application.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388041012191" ignored="false" />
     <file path="/Dummy.txt" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388041050049" ignored="false" />
-    <file path="/admins_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388397318783" ignored="false" />
-    <file path="/user.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388129274875" ignored="false" />
+    <file path="/admins_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388479722203" ignored="false" />
+    <file path="/user.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388399410661" ignored="false" />
     <file path="/.rvmrc" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388123693081" ignored="false" />
     <file path="/add_new_user.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388375309350" ignored="false" />
-    <file path="/add_new_user_page.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388394868525" ignored="false" />
+    <file path="/add_new_user_page.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388454045997" ignored="false" />
     <file path="/20131226020729_create_users.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388384548978" ignored="false" />
     <file path="/a.sql" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388385626784" ignored="false" />
+    <file path="/repair_user_password.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388470674099" ignored="false" />
+    <file path="/20131231063302_remove_password_confirmation_form_user.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388472044252" ignored="false" />
+    <file path="/20131231065637_add_password_confirmation_to_user.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388473059518" ignored="false" />
+    <file path="/repair_user_password_page.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388476347853" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,64 +50,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admins/show.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="18" selection-start="112" selection-end="128" vertical-scroll-proportion="-4.071429">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="2" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sessions_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="40" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="92" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="admins_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/admins_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="33" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.9316547">
+            <state line="28" column="9" selection-start="441" selection-end="441" vertical-scroll-proportion="0.9236111">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <file leaf-file-name="repair_user_password_page.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admins/repair_user_password_page.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_new_user_page.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admins/add_new_user_page.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="32" selection-start="109" selection-end="109" vertical-scroll-proportion="-2.7142856">
+            <state line="22" column="70" selection-start="1044" selection-end="1044" vertical-scroll-proportion="-13.928572">
               <folding />
             </state>
           </provider>
@@ -119,29 +78,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/users/new.haml" />
-        <option value="$PROJECT_DIR$/app/views/users/show.haml" />
-        <option value="dbtable:/2bf99a64/54317360-b95f-48c0-9e30-7fd1bf674c4f/..users" />
-        <option value="dbtable:/2bf99a64/54317360-b95f-48c0-9e30-7fd1bf674c4f/..admins" />
         <option value="$PROJECT_DIR$/app/views/sessions/new.haml" />
         <option value="$PROJECT_DIR$/app/views/admins/add_new_user.haml" />
         <option value="$PROJECT_DIR$/db/migrate/20131226020729_create_users.rb" />
         <option value="$PROJECT_DIR$/app/views/admins/new.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/admins/add_new_user_page.haml" />
+        <option value="$PROJECT_DIR$/app/views/admins/repair_user_password.haml" />
         <option value="$PROJECT_DIR$/app/views/admins/show.haml" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/admins/add_new_user_page.haml" />
-        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20131231063302_remove_password_confirmation_form_user.rb" />
+        <option value="dbtable:/2bf99a64/54317360-b95f-48c0-9e30-7fd1bf674c4f/..users" />
+        <option value="$PROJECT_DIR$/db/migrate/20131231065637_add_password_confirmation_to_user.rb" />
+        <option value="$PROJECT_DIR$/app/views/admins/repair_user_password_page.haml" />
         <option value="$PROJECT_DIR$/app/controllers/admins_controller.rb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3" />
-    <option name="width" value="1372" />
-    <option name="height" value="745" />
+    <option name="width" value="1366" />
+    <option name="height" value="743" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -169,6 +127,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -294,6 +253,10 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -367,23 +330,44 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activity_server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activity_server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="concerns" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="RailsProjectView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Database.TableEditor.Splitter" value="0.9" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$USER_HOME$/gongcheng/activity_server" />
-    <property name="Ruby.ViewRefParam.DefaultExtension" value="html.erb" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="Ruby.ViewRefParam.DefaultExtension" value="html.erb" />
   </component>
   <component name="RunManager" selected="Rails.Development: activity_server">
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
@@ -644,15 +628,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1372" height="745" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1366" height="743" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847896" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.05530303" sideWeight="0.671521" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18873668" sideWeight="0.671521" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21136364" sideWeight="0.671521" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21765602" sideWeight="0.671521" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847896" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -661,7 +644,8 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32715008" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847896" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32686085" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -730,32 +714,28 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/users/show.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="566" selection-end="566" vertical-scroll-proportion="0.7916667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/sessions_helper.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/admin.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131226020729_create_users.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/admins/new.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="35" selection-start="165" selection-end="165" vertical-scroll-proportion="0.1888668">
-          <folding />
-        </state>
+        <state line="6" column="39" selection-start="311" selection-end="322" vertical-scroll-proportion="0.20727272" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="15" vertical-scroll-proportion="0.0">
+        <state line="7" column="23" selection-start="299" selection-end="320" vertical-scroll-proportion="0.2250423">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="39" selection-start="493" selection-end="493" vertical-scroll-proportion="0.89183676" />
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/2bf99a64/54317360-b95f-48c0-9e30-7fd1bf674c4f/..users">
@@ -768,82 +748,79 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/new.haml">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20131231065637_add_password_confirmation_to_user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="39" selection-start="272" selection-end="282" vertical-scroll-proportion="0.035984848">
+        <state line="2" column="52" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admins/new.haml">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20131227022102_create_admins.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="39" selection-start="311" selection-end="322" vertical-scroll-proportion="0.20727272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sessions/new.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="18" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.8276515">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/2bf99a64/54317360-b95f-48c0-9e30-7fd1bf674c4f/..admins">
-      <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20131231063302_remove_password_confirmation_form_user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="54" selection-start="134" selection-end="134" vertical-scroll-proportion="0.075848304">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20131226020729_create_users.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="92" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0">
+        <state line="5" column="35" selection-start="144" selection-end="165" vertical-scroll-proportion="0.17431192">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admins/add_new_user_page.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="32" selection-start="109" selection-end="109" vertical-scroll-proportion="-2.7142856">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="2" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admins/show.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="18" selection-start="112" selection-end="128" vertical-scroll-proportion="-4.071429">
+        <state line="15" column="93" selection-start="712" selection-end="712" vertical-scroll-proportion="0.036121674">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="40" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
+        <state line="17" column="24" selection-start="374" selection-end="374" vertical-scroll-proportion="0.5483871">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
+        <state line="4" column="0" selection-start="200" selection-end="200" vertical-scroll-proportion="0.12903225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="41" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admins/show.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="34" selection-start="112" selection-end="128" vertical-scroll-proportion="0.2080292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admins/repair_user_password_page.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="70" selection-start="1044" selection-end="1044" vertical-scroll-proportion="-13.928572">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/admins_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="33" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.9316547">
+        <state line="28" column="9" selection-start="441" selection-end="441" vertical-scroll-proportion="0.9236111">
           <folding />
         </state>
       </provider>

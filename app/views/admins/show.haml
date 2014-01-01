@@ -5,12 +5,13 @@
     你好，
     =@admin[:name]
     =link_to '退出',admins_quit_path
-  %div(class="index-action" style="width:1050px;height:480px;background-color:#F0F0F0;margin-left:10%;margin-top:2%;padding:0px;padding-bottom:2px" )
-    %div(class="header-left"style="margin-left:1px;margin-top:10px"  )
-      管理用户
-      %button(style="margin-left:3px" )
-        =link_to '添加用户',admins_add_new_user_page_path(@admin[:id]) ,:style =>'color:black'
-    %table(class="table table-style"style="margin-top:1px;position:absolute;top:9%" )
+  %div(class="index-action" style="width:1050px;height:480px;margin-left:10%;margin-top:2%;padding:0px" )
+    %div(style="margin-left:1px;margin-top:10px;background-color:#F0F0F0;height:90px"  )
+      %span(class="header-left" style="font-size:16px;margin-top:5px" )
+        管理用户
+        %button(style="margin-left:3px" )
+          =link_to '添加用户',admins_add_new_user_page_path(@admin[:id]) ,:style =>'color:black'
+    %table(class="table table-style"style="margin-top:1px;position:absolute;top:7%" )
       %tbody
         %tr
           %th 编号
@@ -28,12 +29,11 @@
                   =t.name
                 %th(style="width:20%" )
 
-                  =link_to '删除'  ,admin_path(t.id),method: :delete, data: { confirm: 'Are you sure?'}
+                  =link_to '删除'  ,admin_path(t.id),method: :delete, data: { confirm: '你确定要删除'+t.name+"吗？"}
                   %span
 
-                  =link_to '修改密码'
+                  =link_to '修改密码' ,admins_repair_user_password_page_path(t.id)
               %br
-    %div(style='font-size:12px;position:absolute;right:5%;bottom:-10px;')
-      .right-padding
-        = will_paginate @user
-
+      %div(style='bottom:-10px;width:100%;height:32px;position:absolute;')
+        %div(style="font-size:12px;right:5%;position:absolute;" )
+          =will_paginate@user ,{:previous_label =>'<<',:next_label => '>>'}

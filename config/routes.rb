@@ -6,6 +6,8 @@ ActivityServer::Application.routes.draw do
   post 'admins_add_new_user'=>'admins#add_new_user'
   get 'admins_add_new_user_page'=>'admins#add_new_user_page'
   get 'admins_quit'=>'admins#quit'
+  get 'admins_repair_user_password_page'=>'admins#repair_user_password_page'
+  post 'admins_repair_user_password'=>'admins#repair_user_password'
   #get 'users'=>'users#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
