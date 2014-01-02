@@ -54,8 +54,7 @@ class UsersController < ApplicationController
      @user=User.find_by(name:params[:users][:name])
     if @user!=nil
        session[:id_of_the_forget_password_user]=@user[:id]
-       render  'compare_question_page'
-       #redirect_to users_compare_question_page_path
+       redirect_to  users_compare_question_page_path
       return
     else
        flash[:error]='账号不存在'
@@ -64,19 +63,24 @@ class UsersController < ApplicationController
   end
 
   def compare_question_page
+    flash[:error]=''
     @user=User.find_by(id: session[:id_of_the_forget_password_user])
   end
 
   def compare_question
     @user=User.find_by(id: session[:id_of_the_forget_password_user])
     if @user[:answer]==params[:users][:answer]
-     render 'chang_password_page'
+     redirect_to users_change_password_page_path
     else
+      flash[:error]='密保答案不正确'
       render 'compare_question_page'
+
     end
   end
 
   def change_password_page
+    flash[:error]=''
+    @user=User.find_by(id: session[:id_of_the_forget_password_user])
   end
 
   def change_password
@@ -85,6 +89,8 @@ class UsersController < ApplicationController
       @user[:password]=params[:users][:password]
       @user[:password_confirmation]=params[:users][:password_confirmation]
       change_password_is_or_not_save
+    else
+      flash[:error]="两次密码不一致"
     end
   end
 
