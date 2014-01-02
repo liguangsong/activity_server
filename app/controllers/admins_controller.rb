@@ -11,6 +11,7 @@ class AdminsController < ApplicationController
       redirect_to new_session_path
     end
     return session[:user]==nil
+
   end
 
   def new
@@ -25,6 +26,7 @@ class AdminsController < ApplicationController
   end
 
   def add_new_user_page
+    flash[:error]=''
     if !check_login
       @user=User.new
       @id=params[:format]

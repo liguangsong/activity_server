@@ -7,7 +7,7 @@
     <file path="/users.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388022904821" ignored="false" />
     <file path="/routes.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388646572847" ignored="false" />
     <file path="/users_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388649404764" ignored="false" />
-    <file path="/new.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388635200890" ignored="false" />
+    <file path="/new.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388651237956" ignored="false" />
     <file path="/Gemfile" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388131023064" ignored="false" />
     <file path="$USER_HOME$/gongcheng/activity_server/app/controllers/users_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388026267972" ignored="false" />
     <file path="$USER_HOME$/gongcheng/activity_server/config/routes.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388026349768" ignored="false" />
@@ -15,7 +15,7 @@
     <file path="/show.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388633400440" ignored="false" />
     <file path="/application.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388041012191" ignored="false" />
     <file path="/Dummy.txt" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388041050049" ignored="false" />
-    <file path="/admins_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388628030214" ignored="false" />
+    <file path="/admins_controller.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388651488350" ignored="false" />
     <file path="/user.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388399410661" ignored="false" />
     <file path="/.rvmrc" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388123693081" ignored="false" />
     <file path="/add_new_user.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388375309350" ignored="false" />
@@ -26,7 +26,7 @@
     <file path="/20131231063302_remove_password_confirmation_form_user.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388472044252" ignored="false" />
     <file path="/20131231065637_add_password_confirmation_to_user.rb" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388473059518" ignored="false" />
     <file path="/repair_user_password_page.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388476347853" ignored="false" />
-    <file path="/forget_password_page.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388644745828" ignored="false" />
+    <file path="/forget_password_page.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388650892726" ignored="false" />
     <file path="/compare_question_page.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388643713619" ignored="false" />
     <file path="/chang_password_page.haml" changelist="ff27d246-1063-4015-b068-221207f77dd8" time="1388646433322" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,55 +53,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admins_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="admins_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/admins_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="21" selection-start="1472" selection-end="1472" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users_controller.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="45" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.071428575">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="compare_question_page.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/compare_question_page.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="917" selection-end="917" vertical-scroll-proportion="-12.214286">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="change_password_page.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/change_password_page.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="1159" selection-end="1159" vertical-scroll-proportion="-14.928572">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forget_password_page.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/forget_password_page.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="558" selection-end="740" vertical-scroll-proportion="-8.821428">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/new.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="33" selection-start="1280" selection-end="1484" vertical-scroll-proportion="-9.285714">
+            <state line="15" column="29" selection-start="266" selection-end="266" vertical-scroll-proportion="0.49479166">
               <folding />
             </state>
           </provider>
@@ -126,22 +81,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20131231063302_remove_password_confirmation_form_user.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20131231065637_add_password_confirmation_to_user.rb" />
         <option value="$PROJECT_DIR$/app/views/admins/repair_user_password_page.haml" />
         <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
         <option value="dbtable:/2bf99a64/54317360-b95f-48c0-9e30-7fd1bf674c4f/..users" />
         <option value="dbtable:/2bf99a64/54317360-b95f-48c0-9e30-7fd1bf674c4f/..admins" />
-        <option value="$PROJECT_DIR$/app/views/users/new.haml" />
         <option value="$PROJECT_DIR$/app/views/users/show.haml" />
         <option value="$PROJECT_DIR$/app/views/sessions/new.haml" />
         <option value="$PROJECT_DIR$/app/views/admins/add_new_user_page.haml" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/users/forget_password_page.haml" />
-        <option value="$PROJECT_DIR$/app/views/users/compare_question_page.haml" />
         <option value="$PROJECT_DIR$/app/views/users/chang_password_page.haml" />
-        <option value="$PROJECT_DIR$/app/controllers/admins_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/users/compare_question_page.haml" />
+        <option value="$PROJECT_DIR$/app/views/users/forget_password_page.haml" />
+        <option value="$PROJECT_DIR$/app/views/users/change_password_page.haml" />
+        <option value="$PROJECT_DIR$/app/views/users/new.haml" />
+        <option value="$PROJECT_DIR$/app/views/admins/new.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/admins_controller.rb" />
       </list>
     </option>
   </component>
@@ -682,7 +637,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18873668" sideWeight="0.6720779" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18873668" sideWeight="0.6720779" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22146119" sideWeight="0.6720779" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -762,16 +717,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/2bf99a64/54317360-b95f-48c0-9e30-7fd1bf674c4f/..admins">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="23" selection-start="299" selection-end="320" vertical-scroll-proportion="0.0">
@@ -779,51 +724,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admins/repair_user_password_page.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="46" selection-start="515" selection-end="515" vertical-scroll-proportion="0.14781022">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admins/add_new_user_page.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="11" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.30608365">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="30" selection-start="624" selection-end="624" vertical-scroll-proportion="0.5555556">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sessions/new.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="53" selection-start="424" selection-end="455" vertical-scroll-proportion="0.11406844">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admins/show.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="29" selection-start="776" selection-end="776" vertical-scroll-proportion="0.7946768">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/show.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="23" selection-start="33" selection-end="33" vertical-scroll-proportion="0.070500925">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/forget_password_page.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="558" selection-end="740" vertical-scroll-proportion="-8.821428">
           <folding />
         </state>
       </provider>
@@ -838,9 +741,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/admins_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="21" selection-start="1472" selection-end="1472" vertical-scroll-proportion="0.0">
+        <state line="86" column="22" selection-start="1733" selection-end="1740" vertical-scroll-proportion="2.9494586">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/sessions/new.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="55" selection-start="464" selection-end="564" vertical-scroll-proportion="-6.785714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/show.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="23" selection-start="33" selection-end="33" vertical-scroll-proportion="-1.3571428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admins/new.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="5" selection-start="123" selection-end="123" vertical-scroll-proportion="-1.3571428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admins/show.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="50" selection-start="1394" selection-end="1394" vertical-scroll-proportion="0.77380955">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/forget_password_page.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="7" selection-start="200" selection-end="200" vertical-scroll-proportion="0.15079366">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admins/repair_user_password_page.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="46" selection-start="515" selection-end="515" vertical-scroll-proportion="0.3973384">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admins/add_new_user_page.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="11" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.8669202">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/change_password_page.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="48" selection-start="474" selection-end="474" vertical-scroll-proportion="0.27189782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/new.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="11" selection-start="273" selection-end="273" vertical-scroll-proportion="0.13868614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/compare_question_page.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="51" selection-start="7" selection-end="476" vertical-scroll-proportion="0.27737227">
           <folding />
         </state>
       </provider>
@@ -852,30 +825,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/new.haml">
+    <entry file="file://$PROJECT_DIR$/app/controllers/admins_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="33" selection-start="1280" selection-end="1484" vertical-scroll-proportion="-9.285714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/change_password_page.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="1159" selection-end="1159" vertical-scroll-proportion="-14.928572">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/compare_question_page.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="917" selection-end="917" vertical-scroll-proportion="-12.214286">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="45" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.071428575">
+        <state line="15" column="29" selection-start="266" selection-end="266" vertical-scroll-proportion="0.49479166">
           <folding />
         </state>
       </provider>
