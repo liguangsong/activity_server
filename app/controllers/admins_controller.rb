@@ -11,7 +11,6 @@ class AdminsController < ApplicationController
       redirect_to new_session_path
     end
     return session[:user]==nil
-
   end
 
   def new
@@ -103,6 +102,7 @@ class AdminsController < ApplicationController
   def repair_password_is_or_not_some
     if params[:users_password][:password]==params[:users_password][:password_confirmation]
       @user[:password]= params[:users_password][:password]
+      @user[:password_confirmation]=params[:users_password][:password_confirmation]
       repair_password_is_or_not_empty
     else
       flash[:error]="两次密码不一致"

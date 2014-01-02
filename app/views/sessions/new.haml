@@ -11,11 +11,11 @@
     %div(class="input-prepend"style="margin:30px")
       = form_for (:session), url:sessions_path do |f|
         = f.label '帐  号',:class=>"add-on",:style=>"height:10%"
-        = f.text_field :name,:style=>"height:10%;width:70%"
+        = f.text_field :name,:style=>"height:10%;width:70%",:placeholder=>'请输入您的账号'
         %br
         %br
         = f.label "密  码",:class=>"add-on",:style=>"height:10%"
-        = f.text_field :password ,:type=>"password",:style=>"height:10%;width:70%"
+        = f.text_field :password ,:type=>"password",:style=>"height:10%;width:70%",:placeholder=>'请输入您的密码'
 
         %div(style="text-align:center;")
         %br
@@ -23,5 +23,5 @@
     -if flash[:error]
       .label-warning(style="width:70%;margin-left:15%;background-color:#FFE4E1;" )
         %p(style="color:#7E4F05;font-size:16px" )
-          密码或用户名错误
+          =flash[:error]
 

@@ -9,15 +9,15 @@
     %div(class="input-prepend"style="margin:30px")
       = form_for :users,url:users_compare_question_path do |f|
         = f.label '密保问题',:class=>"add-on",:style=>"height:10%;width:100px"
-        = f.text_field :question,:style=>"height:10%;width:70%",:value=>@user[:question]
+        = f.text_field :question,:style=>"height:10%;width:70%",:value=>@user[:question],:disabled=>'true'
         %br
         %br
         = f.label '密保答案',:class=>"add-on",:style=>"height:10%;width:100px"
-        = f.text_field :answer,:style=>"height:10%;width:70%"
+        = f.text_field :answer,:style=>"height:10%;width:70%",:placeholder=>'请输入您的密保答案'
         %br
         %div(style="margin-top:50px" )
           =f.submit '下一步', :style=>"width:40%"
       -if flash[:error]
-        .label-warning(style="width:70%;margin-left:15%;background-color:#FFE4E1;" )
-          %p(style="color:#7E4F05;font-size:16px" )
+        .label-warning(style="width:70%;padding-top:1px;padding-bottom:0.5px;margin-left:15%;background-color:#FFE4E1;" )
+          %p(style="color:#7E4F05;font-size:15px;margin-top:5px" )
             =flash[:error]
