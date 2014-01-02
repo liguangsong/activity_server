@@ -8,6 +8,7 @@ ActivityServer::Application.routes.draw do
   get 'admins_quit'=>'admins#quit'
   get 'admins_repair_user_password_page'=>'admins#repair_user_password_page'
   post 'admins_repair_user_password'=>'admins#repair_user_password'
+  get 'users_forget_password_page'=>'users#forget_password_page'
   #get 'users'=>'users#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
