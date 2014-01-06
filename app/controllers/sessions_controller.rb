@@ -19,28 +19,6 @@ class SessionsController < ApplicationController
     else
       return is_or_not_input_password(name,password)
     end
-    #
-    #
-    #@admin=Admin.find_by(name:name)
-    #@user=User.find_by(name:name)
-    #if @user==nil&&@admin==nil
-    #  flash.now[:error]='用户名或密码不正确'
-    #  render 'new'
-    #  return
-    #end
-    #if @admin!=nil&&password==@admin[:password]
-    #    session[:user]=@admin[:name]
-    #    redirect_to admin_path(@admin[:id])
-    #    return
-    #end
-    #if @user!=nil&&password==@user[:password]
-    #   session[:user]=@user[:name]
-    #   redirect_to user_path(@user[:id])
-    #  return
-    #  else
-    #  flash.now[:error]='用户名或密码不正确'
-    #  render 'new'
-    #end
   end
 
   def is_or_not_input_password(name,password)
@@ -49,10 +27,10 @@ class SessionsController < ApplicationController
       render 'new'
       return
     end
-    return user_name_is_or_nor_exist(name,password)
+    return user_name_is_or_not_exist(name,password)
   end
 
-  def user_name_is_or_nor_exist(name,password)
+  def user_name_is_or_not_exist(name,password)
     @admin=Admin.find_by(name:name)
     @user=User.find_by(name:name)
     if @user==nil&&@admin==nil
@@ -73,6 +51,38 @@ class SessionsController < ApplicationController
       flash.now[:error]='用户名或密码不正确'
       render 'new'
     end
+  end
+
+  def user_authentication
+    user=User.find_by(name:params[:update][:name])
+    user_is_or_not_exist(user)
+  end
+
+  def user_is_or_not_exist(user)
+    if user==nil
+      p'-------1----'
+     respond_to do |format|
+       p '------2----'
+       format.json { render :json=>'false' }
+     end
+    else
+      user_password_is_or_not_correct(user)
+    end
+  end
+
+  def user_password_is_or_not_correct(user)
+     password=params[:update][:password]
+    if(password==user[:password])
+      respond_to do |format|
+
+      format.json { render :json=>'true' }
+      end
+    else
+      respond_to do |format|
+        format.json { render :json=>'false' }
+      end
+    end
+
   end
 end
 

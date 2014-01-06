@@ -14,6 +14,7 @@ ActivityServer::Application.routes.draw do
   post 'users_compare_question'=>'users#compare_question'
   get 'users_change_password_page'=>'users#change_password_page'
   post 'users_change_password'=>'users#change_password'
+  post '/sessions/user_authentication'=>'sessions#user_authentication'
   #get 'users'=>'users#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
