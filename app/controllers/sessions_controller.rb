@@ -60,9 +60,7 @@ class SessionsController < ApplicationController
 
   def user_is_or_not_exist(user)
     if user==nil
-      p'-------1----'
      respond_to do |format|
-       p '------2----'
        format.json { render :json=>'false' }
      end
     else
@@ -74,7 +72,6 @@ class SessionsController < ApplicationController
      password=params[:update][:password]
     if(password==user[:password])
       respond_to do |format|
-
       format.json { render :json=>'true' }
       end
     else
@@ -84,7 +81,16 @@ class SessionsController < ApplicationController
     end
 
   end
+
+  def update
+     p params[:update]
+
+    p params[:user]
+
+  end
+
 end
+
 
 
 

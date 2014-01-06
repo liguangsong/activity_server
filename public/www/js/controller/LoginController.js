@@ -9,9 +9,7 @@ function LoginController($scope, $http, $navigate, $templateCache) {
     function submit_login_information(date,name){
         $http({method: 'post', url: '/sessions/user_authentication', data: {update: date}}).success(
             function (respond, statue) {
-
                 if (respond == "true") {
-
                     go_to_activity_list(name)
                 }
                 if (respond == "false") {
