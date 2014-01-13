@@ -123,3 +123,4 @@ Bid.destroy_current_activity=function(){
     console.log(activity_of_user)
     user.save_activity_of_user(activity_of_user);
 }
+

@@ -19,10 +19,12 @@ user.get_user_name=function(){
 
 user.get_activity_of_user=function(){
     var user_name=user.get_user_name();
-   return JSON.parse(localStorage.getItem(user_name))||{}
+    return JSON.parse(localStorage.getItem(user_name))||{}
 }
 
 user.save_activity_of_user=function(activity_of_user){
     var user_name=user.get_user_name();
     localStorage.setItem(user_name,JSON.stringify(activity_of_user))
 }
+
+

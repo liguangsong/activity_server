@@ -12,10 +12,11 @@ function ActivityListController($scope, $navigate, $http) {
         $navigate.go("/auction")
     }
     $scope.synchronous_data = function () {
-        var activity_of_user = user.get_activity_of_user();
-        var user_name = user.get_user_name();
-        $http({method: 'post', url: '/sessions/update', data: {update: activity_of_user, user: user_name}}).success(
+
+        var activity_of_user = Data.get_date();
+        $http({method: 'post', url: '/sessions/update', data: {update: activity_of_user}}).success(
             function (respond, statue) {
+                console.log("1")
                 if (respond == "true") {
                     $scope.notice = 'false'
                 }
@@ -24,7 +25,9 @@ function ActivityListController($scope, $navigate, $http) {
                 }
             })
             .error(function () {
+                console.log("2")
                 $scope.error = 'true'
             })
     }
+
 }

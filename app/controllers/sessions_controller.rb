@@ -83,11 +83,29 @@ class SessionsController < ApplicationController
   end
 
   def update
-     p params[:update]
+    params[:update][:activity].each do |t|
+      @activity=Activity.find_by(user_name:t["user_name"],activity_name:t["activity_name"])
+      if @activity==nil
+        Activity.new(t)
+      else
+         @activity["sign_up_number"]=t["sign_up_number"]
+         redirect_to "/admins/show"
+      end
+    end
+    p '-------------'
 
-    p params[:user]
+    p '----------'
+
+
 
   end
+
+  private
+  def activity_params
+    params.require(:update).permit(:activity, :sign_up, :bid_list,:bidding,:analysis,:sort )
+  end
+
+
 
 end
 
