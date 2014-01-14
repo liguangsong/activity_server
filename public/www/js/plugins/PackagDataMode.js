@@ -24,7 +24,8 @@ Data.prototype.sign_up = function () {
 Data.prototype.bid_list = function () {
     var user_name = user.get_user_name()
     return _.map(this.data["bids"], function (list) {
-        return {"user": user_name, "activity_name": list["activity_name"], "bid_name": list["bid_name"], "number": list["biddings"].length, "status": list["status"]}
+        var sign_up_number = SignUp.render_sign_ups(list["activity_name"]).length;
+        return {"user": user_name, "activity_name": list["activity_name"], "bid_name": list["bid_name"], "number": list["biddings"].length,"sign_up_number":sign_up_number, "status": list["status"]}
     })
 }
 

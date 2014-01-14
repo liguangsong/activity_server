@@ -132,6 +132,8 @@ class SessionsController < ApplicationController
       else
         @bid_list["number"]=t["number"]
         @bid_list["status"]=t["status"]
+        @bid_list["sign_up_number"]=t["sign_up_number"]
+        @bid_list.save()
       end
     end
   end

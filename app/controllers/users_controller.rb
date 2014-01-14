@@ -115,6 +115,12 @@ class UsersController < ApplicationController
      @bid_list=BidList.paginate(page: params[:page], per_page: 10).where(:user=>@user,:activity_name=>@activity_name)
   end
 
+  def sign_up_page
+    @activity_name=params[:format]
+    @user=session[:user]
+    @sign_up=SignUp.paginate(page: params[:page], per_page: 10).where(:user=>@user,:activity_name=>@activity_name)
+  end
+
   private
   def user_params
     params.require(:users).permit(:name, :password, :password_confirmation, :answer, :question)
