@@ -41,6 +41,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @activity=Activity.paginate(page: params[:page], per_page: 10).where(:user_name=>@user["name"])
   end
 
   def forget_password_page
@@ -106,6 +107,12 @@ class UsersController < ApplicationController
     else
       render 'change_password_page'
     end
+  end
+
+  def bid_list_page
+     @activity_name=params[:format]
+     @user=session[:user]
+     @bid_list=BidList.paginate(page: params[:page], per_page: 10).where(:user_name=>@user["name"],:activity_name=>@activity_name)
   end
 
   private

@@ -90,6 +90,8 @@ class SessionsController < ApplicationController
         @activity_of_user.save()
       else
         @activity["sign_up_number"]=t["sign_up_number"]
+        @activity["bid_number"]=t["bid_number"]
+        @activity.save()
       end
     end
     sign_up

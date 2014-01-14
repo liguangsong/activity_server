@@ -6,6 +6,8 @@ Data.prototype.activity_name = function () {
     var user_name = user.get_user_name()
     return _.map(this.data["activities"], function (list) {
         list["sign_up_number"] = SignUp.render_sign_ups(list["activity_name"]).length;
+        var bid_number=Bid.list_auction_name_and_activity_name(list["activity_name"]).length;
+        list["bid_number"]=bid_number
         list["user_name"] = user_name;
         return list
     })

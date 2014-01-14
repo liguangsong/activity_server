@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114024920) do
+ActiveRecord::Schema.define(version: 20140114045325) do
 
   create_table "activities", force: true do |t|
     t.string   "user_name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140114024920) do
     t.text     "status"
     t.text     "activity_name"
     t.text     "sign_up_number"
+    t.text     "bid_number"
   end
 
   create_table "admins", force: true do |t|
