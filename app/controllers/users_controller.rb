@@ -121,6 +121,26 @@ class UsersController < ApplicationController
     @sign_up=SignUp.paginate(page: params[:page], per_page: 10).where(:user=>@user,:activity_name=>@activity_name)
   end
 
+  def bidding_page
+    id=params[:format]
+
+    bid=BidList.find_by(id:id)
+    @bidding=Bidding.paginate(page: params[:page],per_page:10).where(:user=>bid["user"],:activity_name=>bid["activity_name"],:bid_name=>bid["bid_name"])
+    @analysis=Analysis.paginate(page: params[:page],per_page:10).where(:user=>bid["user"],:activity_name=>bid["activity_name"],:bid_name=>bid["bid_name"])
+    @result=Result.find_by(user:bid["user"],activity_name:bid["activity_name"],bid_name:bid["bid_name"])
+  end
+
+  #def result(bid)
+  #  @result=Result.find_by(user:bid["user"],activity_name:bid["activity_name"],bid_name:bid["bid_name"])
+  #  if @result["name"]="竞价未开始"||@result["name"]="竞价失败"
+  #    return  @result["name"]
+  #  else
+  #    return  @result
+  #
+  #  end
+  #
+  #end
+
   private
   def user_params
     params.require(:users).permit(:name, :password, :password_confirmation, :answer, :question)

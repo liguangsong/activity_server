@@ -14,7 +14,6 @@ SignUp.render_sign_ups = function (activity_name) {
     var sign_up = _.filter(sign_ups, function (list) {
         return list.activity_name == activity_name
     })
-    console.log(sign_up)
     return sign_up;
 }
 
@@ -36,7 +35,6 @@ SignUp.sign_ups_is_or_repeat = function (phone) {
 
     var current_activity = Activity.current_activity();
     var sign_ups = SignUp.render_sign_ups(current_activity);
-
     return _.some(sign_ups, function (list) {
         return list.phone == phone
     })

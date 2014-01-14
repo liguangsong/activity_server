@@ -158,7 +158,10 @@ class SessionsController < ApplicationController
         @result=Result.new(t)
         @result.save()
       else
-        @result["result"]=t["result"]
+        @result["name"]=t["name"]
+        @result["price"]=t["price"]
+        @result["phone"]=t["phone"]
+
         @result.save()
       end
     end
@@ -166,7 +169,7 @@ class SessionsController < ApplicationController
 
   private
   def activity_params
-    params.require(:update).permit(:activity, :sign_up, :bidding, :analysis, :result)
+    params.require(:update).permit(:activity, :sign_up, :bidding_page, :analysis, :result)
   end
 
 

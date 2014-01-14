@@ -1,0 +1,33 @@
+%h1
+  活动通
+%p(class="header-right"style="margin-top:1%")
+  你好，
+  =session[:user]
+  =link_to '退出',admins_quit_path
+%div(class="index-action" style="width:1050px;height:480px;margin-left:10%;margin-top:2%;padding:0px" )
+  -if @result["phone"]!=""
+    %div(style="margin-left:1px;margin-top:10px;background-color:#F0F0F0;height:200px")
+      %div(style="padding-top:30px" )
+        %h3
+          获胜者 :
+          =@result["name"]
+          %br
+          出价：
+          =@result["price"]
+          %br
+          电话号：
+          =@result["phone"]
+
+  -if @result["name"]=="竞价失败"&&@result["phone"]==""
+    %div(style="margin-left:1px;margin-top:10px;background-color:#F0F0F0;height:150px")
+      %div(style="padding-top:30px" )
+        %h3
+          本次竞价无人胜出
+
+  -if @result["name"]=="竞价正在进行"&&@result["phone"]==""
+    %div(style="margin-left:1px;margin-top:10px;background-color:#F0F0F0;height:150px")
+      %div(style="padding-top:30px" )
+        %h3
+          竞价正在进行
+
+

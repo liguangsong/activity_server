@@ -134,7 +134,7 @@ Bidding.sorting=function(activity_name,bid_name){
     }
     var winner=Bidding.get_winner(activity_name,bid_name,Bidding.get_winner_price(analysis))
     var sort="竞价结果："+"恭喜"+winner.name+"，以￥"+winner.price+"成功竞拍，"+"电话号"+winner.phone
-    Bidding.save_sorting(activity_name,bid_name,sort)
+    Bidding.save_sorting(activity_name,bid_name,winner)
     return sort
 }
 

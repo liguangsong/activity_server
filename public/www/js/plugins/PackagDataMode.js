@@ -34,7 +34,6 @@ Data.prototype.bidding = function () {
     var a = _.map(this.data["bids"], function (list) {
         return Data.bidding_list(list)
     })
-    console.log(a)
     return _.flatten(a)
 }
 
@@ -50,7 +49,16 @@ Data.prototype.analysis = function () {
 Data.prototype.result = function () {
     var user_name = user.get_user_name()
     return  _.map(this.data["bids"], function (list) {
-        return {"user": user_name, "bid_name": list["bid_name"], "activity_name": list["activity_name"], "result": list["sorting"]}
+        console.log(list["sorting"])
+        if (list["sorting"]!="竞价失败"&&list["sorting"]!=undefined){
+           return {"user": user_name, "bid_name": list["bid_name"], "activity_name": list["activity_name"], "name": list["sorting"].name,"phone":list["sorting"].phone,"price":list["sorting"].price}
+        }else if(list["sorting"]!="竞价失败"){
+            return {"user": user_name, "bid_name": list["bid_name"], "activity_name": list["activity_name"], "name": "竞价失败","phone":"","price":""}
+        }else{
+            return {"user": user_name, "bid_name": list["bid_name"], "activity_name": list["activity_name"], "name": "竞价正在经行","phone":"","price":""}
+        }
+
+
     })
 }
 
