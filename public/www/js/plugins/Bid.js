@@ -120,7 +120,6 @@ Bid.change_status=function(activity_name,bid_name,status){
 Bid.destroy_current_activity=function(){
     var activity_of_user=user.get_activity_of_user()
     activity_of_user["current_bid"]=""
-    console.log(activity_of_user)
     user.save_activity_of_user(activity_of_user);
 }
 

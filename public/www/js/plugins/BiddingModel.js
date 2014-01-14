@@ -129,11 +129,13 @@ Bidding.groupby_bidding=function(bidding_list){
 Bidding.sorting=function(activity_name,bid_name){
     var analysis= Bidding.get_analysis(activity_name,bid_name);
     if(Bidding.get_winner_price(analysis)==null){
+        Bidding.save_sorting(activity_name,bid_name,"竞价失败")
         return "竞价失败"
     }
     var winner=Bidding.get_winner(activity_name,bid_name,Bidding.get_winner_price(analysis))
-    Bidding.save_sorting(activity_name,bid_name,winner)
-    return "竞价结果："+"恭喜"+winner.name+"，以￥"+winner.price+"成功竞拍，"+"电话号"+winner.phone
+    var sort="竞价结果："+"恭喜"+winner.name+"，以￥"+winner.price+"成功竞拍，"+"电话号"+winner.phone
+    Bidding.save_sorting(activity_name,bid_name,sort)
+    return sort
 }
 
 Bidding.get_analysis=function(activity_name,bid_name){

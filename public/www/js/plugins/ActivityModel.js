@@ -54,6 +54,7 @@ Activity.activity_status_change=function(activity_name, status){
     var all_activity= Activity.get_all_activity(activity_of_user);
      var event=_.map(all_activity,function(list){
        if(list.activity_name==activity_name){
+
            list.status=status
        }
         return list

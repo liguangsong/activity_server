@@ -22,7 +22,7 @@ Data.prototype.sign_up = function () {
 Data.prototype.bid_list = function () {
     var user_name = user.get_user_name()
     return _.map(this.data["bids"], function (list) {
-        return {"bid_name": list["bid_name"], "number": list["biddings"].length, "status": list["status"]}
+        return {"user": user_name, "activity_name": list["activity_name"], "bid_name": list["bid_name"], "number": list["biddings"].length, "status": list["status"]}
     })
 }
 
@@ -31,47 +31,36 @@ Data.prototype.bidding = function () {
     var a = _.map(this.data["bids"], function (list) {
         return Data.bidding_list(list)
     })
+    console.log(a)
     return _.flatten(a)
 }
 
 Data.prototype.analysis = function () {
 
     var a = _.map(this.data["bids"], function (list) {
-        return Data.bidding_list(list)
+        return Data.analysis_list(list)
     })
     return _.flatten(a)
 }
 
 
-
-Data.prototype.sort = function () {
+Data.prototype.result = function () {
     var user_name = user.get_user_name()
     return  _.map(this.data["bids"], function (list) {
-        return {"bid_name": list["bid_name"], "activity_name": list["activity_name"], "sort": list["sort"]}
+        return {"user": user_name, "bid_name": list["bid_name"], "activity_name": list["activity_name"], "result": list["sorting"]}
     })
 }
 
-Data.prototype.packaging=function(){
-    var activity=Data.activity_name()
-    var sign_up=Data.sign_up()
-    var bid_list=Data.bid_list()
-    var bidding=Data.bidding()
-    var analysis=Data.analysis()
-    var sort=Data.sort()
-    return {"activity":activity,"sign_up":sign_up,"bid_list":bid_list,"bidding":bidding,"analysis":analysis,"sort":sort}
-}
-
-Data.get_date=function() {
-    console.log("1")
+Data.get_date = function () {
     var activity_of_user = user.get_activity_of_user();
     var data = new Data(activity_of_user);
-    var activity=data.activity_name()
-    var sign_up=data.sign_up()
-    var bid_list=data.bid_list()
-    var bidding=data.bidding()
-    var analysis=data.analysis()
-    var sort=data.sort()
-    return {"activity":activity,"sign_up":sign_up,"bid_list":bid_list,"bidding":bidding,"analysis":analysis,"sort":sort}
+    var activity = data.activity_name()
+    var sign_up = data.sign_up()
+    var bidding = data.bidding()
+    var bid_list = data.bid_list()
+    var analysis = data.analysis()
+    var result = data.result()
+    return {"activity": activity, "sign_up": sign_up, "bid_list": bid_list, "bidding": bidding, "analysis": analysis, "result": result}
 }
 
 Data.bidding_list = function (bid) {
