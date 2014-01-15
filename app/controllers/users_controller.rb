@@ -39,9 +39,24 @@ class UsersController < ApplicationController
     render 'new'
   end
 
+  def quit
+    p '----------------'
+    session[:user]=nil;
+    redirect_to new_session_path;
+  end
+
+  def check_user_login
+    if session[:user]==nil
+      redirect_to new_session_path
+    end
+    return session[:user]==nil
+  end
+
   def show
-    @user = User.find(params[:id])
+    if !check_user_login
+    @user = User.find_by(id:params[:id])
     @activity=Activity.paginate(page: params[:page], per_page: 10).where(:user_name=>@user["name"])
+    end
   end
 
   def forget_password_page
@@ -110,20 +125,25 @@ class UsersController < ApplicationController
   end
 
   def bid_list_page
-     @activity_name=params[:format]
-     @user=session[:user]
-     @id=User.find_by(name:@user)["id"]
-     @bid_list=BidList.paginate(page: params[:page], per_page: 10).where(:user=>@user,:activity_name=>@activity_name)
+    if !check_user_login
+    @activity_name=params[:format]
+    @user=session[:user]
+    @id=User.find_by(name:@user)["id"]
+    @bid_list=BidList.paginate(page: params[:page], per_page: 10).where(:user=>@user,:activity_name=>@activity_name)
+     end
   end
 
   def sign_up_page
+    if !check_user_login
     @activity_name=params[:format]
     @user=session[:user]
     @id=User.find_by(name:@user)["id"]
     @sign_up=SignUp.paginate(page: params[:page], per_page: 10).where(:user=>@user,:activity_name=>@activity_name)
+    end
   end
 
   def bidding_page
+    if !check_user_login
     @id=params[:format]
     @user=session[:user]
     @user_id=User.find_by(name:@user)["id"]
@@ -141,18 +161,24 @@ class UsersController < ApplicationController
     @bidding=Bidding.paginate(page: params[:page],per_page:10).where(:user=>bid["user"],:activity_name=>bid["activity_name"],:bid_name=>bid["bid_name"])
     @analysis=Analysis.paginate(page: params[:page],per_page:10).where(:user=>bid["user"],:activity_name=>bid["activity_name"],:bid_name=>bid["bid_name"])
     @result=Result.find_by(user:bid["user"],activity_name:bid["activity_name"],bid_name:bid["bid_name"])
+    end
+
   end
 
   def bidding_list
-      @activity_name=params[:format]
-      session[:list]="bidding_list"
-      redirect_to users_bidding_page_path(@activity_name)
+    if !check_user_login
+    @activity_name=params[:format]
+    session[:list]="bidding_list"
+    redirect_to users_bidding_page_path(@activity_name)
+    end
+
   end
 
   def analysis_list
     @activity_name=params[:format]
     session[:list]="ananlysis_list"
     redirect_to users_bidding_page_path(@activity_name)
+
   end
 
 

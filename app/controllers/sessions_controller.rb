@@ -39,7 +39,7 @@ class SessionsController < ApplicationController
       return
     end
     if @admin!=nil&&password==@admin[:password]
-      session[:user]=@admin[:name]
+      session[:admin]=@admin[:name]
       redirect_to admin_path(@admin[:id])
       return
     end
@@ -83,23 +83,31 @@ class SessionsController < ApplicationController
   end
 
   def update
+    activity
+    sign_up
+    bidding
+    p '----2-------'
+    bid_list
+    analysis
+    result
+    p '---1---'
+    respond_to do |format|
+      format.json { render :json => 'true' }
+    end
+  end
+
+  def activity
     params[:update][:activity].each do |t|
       @activity=Activity.find_by(user_name: t["user_name"], activity_name: t["activity_name"])
       if @activity==nil
         @activity_of_user=Activity.new(t)
-        @activity_of_user.save()
+        message_save(@activity_of_user)
       else
         @activity["sign_up_number"]=t["sign_up_number"]
         @activity["bid_number"]=t["bid_number"]
-        @activity.save()
+        message_save(@activity)
       end
     end
-    sign_up
-    bidding
-    bid_list
-    analysis
-    result
-    redirect_to "/admins/show"
   end
 
   def sign_up
@@ -107,7 +115,7 @@ class SessionsController < ApplicationController
       @sign_up=SignUp.find_by(user: t["user"], activity_name: t["activity_name"], phone: t["phone"])
       if @sign_up==nil
         @sign_up=SignUp.new(t)
-        @sign_up.save()
+        message_save(@sign_up)
       end
     end
   end
@@ -117,7 +125,7 @@ class SessionsController < ApplicationController
       @bidding=Bidding.find_by(user: t["user"], activity_name: t["activity_name"], bid_name: t["bid_name"], phone: t["phone"])
       if @bidding==nil
         @bidding=Bidding.new(t)
-        @bidding.save()
+        message_save(@bidding)
       end
     end
   end
@@ -127,12 +135,12 @@ class SessionsController < ApplicationController
       @bid_list=BidList.find_by(user: t["user"], activity_name: t["activity_name"], bid_name: t["bid_name"])
       if @bid_list==nil
         @bid_list=BidList.new(t)
-        @bid_list.save()
+        message_save(@bid_list)
       else
         @bid_list["number"]=t["number"]
         @bid_list["status"]=t["status"]
         @bid_list["sign_up_number"]=t["sign_up_number"]
-        @bid_list.save()
+        message_save(@bid_list)
       end
     end
   end
@@ -142,9 +150,10 @@ class SessionsController < ApplicationController
       @analysis=Analysis.find_by(user: t["user"], activity_name: t["activity_name"], bid_name: t["bid_name"],price:t["price"])
       if @analysis==nil
         @analysis=Analysis.new(t)
-        @analysis.save()
+        message_save(@analysis)
       else
         @analysis["number"]=t["number"]
+        message_save(@analysis)
       end
     end
   end
@@ -154,14 +163,23 @@ class SessionsController < ApplicationController
       @result=Result.find_by(user: t["user"], activity_name: t["activity_name"], bid_name: t["bid_name"])
       if @result==nil
         @result=Result.new(t)
-        @result.save()
+        message_save(@result)
       else
         @result["name"]=t["name"]
         @result["price"]=t["price"]
         @result["phone"]=t["phone"]
-        @result.save()
+        message_save(@result)
       end
     end
+  end
+
+  def message_save(message)
+    if !message.save()
+      respond_to do |format|
+        format.json { render :json => 'false' }
+      end
+    end
+
   end
 
   private

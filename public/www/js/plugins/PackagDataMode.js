@@ -96,3 +96,4 @@ Data.analysis_list = function (bid) {
     })
 }
 
+

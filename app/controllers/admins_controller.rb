@@ -2,15 +2,15 @@
 class AdminsController < ApplicationController
 
   def quit
-    session[:user]=nil;
+    session[:admin]=nil;
     redirect_to new_session_path;
   end
 
   def check_login
-    if session[:user]==nil
+    if session[:admin]==nil
       redirect_to new_session_path
     end
-    return session[:user]==nil
+    return session[:admin]==nil
   end
 
   def new
@@ -86,7 +86,7 @@ class AdminsController < ApplicationController
   def repair_user_password_page
     @user=User.find_by(id: params[:format])
     if !check_login
-      @id=Admin.find_by(name: session[:user])[:id]
+      @id=Admin.find_by(name: session[:admin])[:id]
     end
   end
 
@@ -119,6 +119,12 @@ class AdminsController < ApplicationController
       render 'repair_user_password_page'
       return
     end
+  end
+
+  def show_user_activity
+      session[:user]=params[:format]
+      id=User.find_by(name:params[:format])
+      redirect_to user_path(id)
   end
 
   private

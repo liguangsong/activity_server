@@ -1,4 +1,4 @@
-function ActivityListController($scope, $navigate, $http) {
+function ActivityListController($scope, $navigate, $http,$timeout) {
 
     if (Activity.get_all_activity(user.get_activity_of_user()) == '') {
         $navigate.go("/creat_activity")
@@ -21,15 +21,24 @@ function ActivityListController($scope, $navigate, $http) {
         $http({method: 'post', url: '/sessions/update', data: {update: activity_of_user}}).success(
             function (respond, statue) {
                 if (respond == "true") {
-                    $scope.notice = 'false'
+                 pop_out(respond)
                 }
                 if (respond == "false") {
-                    $scope.notice = 'true'
+                   pop_out(respond)
                 }
             })
             .error(function () {
-                $scope.error = 'true'
+                pop_out("error")
             })
     }
-
+    function pop_out(respond) {
+        console.log(respond)
+        $scope.pop_out_modal = true;
+        $scope.success=respond=="true"
+        $scope.false=respond=="false"
+        $scope.error = respond=="error"
+        $timeout(function () {
+            $scope.pop_out_modal = false;
+        }, 3000);
+    }
 }

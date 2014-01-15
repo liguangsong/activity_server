@@ -21,6 +21,8 @@ ActivityServer::Application.routes.draw do
   get 'users_bidding_page'=>"users#bidding_page"
   get 'users_bidding_list'=>'users#bidding_list'
   get 'users_analysis_list'=>'users#analysis_list'
+  get 'admins_show_user_activity'=>"admins#show_user_activity"
+  get "users_quit"=>"users#quit"
   #get 'users'=>'users#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
