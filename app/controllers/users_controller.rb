@@ -112,34 +112,49 @@ class UsersController < ApplicationController
   def bid_list_page
      @activity_name=params[:format]
      @user=session[:user]
+     @id=User.find_by(name:@user)["id"]
      @bid_list=BidList.paginate(page: params[:page], per_page: 10).where(:user=>@user,:activity_name=>@activity_name)
   end
 
   def sign_up_page
     @activity_name=params[:format]
     @user=session[:user]
+    @id=User.find_by(name:@user)["id"]
     @sign_up=SignUp.paginate(page: params[:page], per_page: 10).where(:user=>@user,:activity_name=>@activity_name)
   end
 
   def bidding_page
-    id=params[:format]
-
-    bid=BidList.find_by(id:id)
+    @id=params[:format]
+    @user=session[:user]
+    @user_id=User.find_by(name:@user)["id"]
+    bid=BidList.find_by(id:@id)
+    @bid_name=bid["bid_name"]
+    @activity_name=bid["activity_name"]
+    if session[:list]==nil||session[:list]=="bidding_list"
+      @bidding_list=true
+      @analysis_list=false
+    else
+      @bidding_list=false
+      @analysis_list=true
+    end
+    @activity_name=bid["activity_name"]
     @bidding=Bidding.paginate(page: params[:page],per_page:10).where(:user=>bid["user"],:activity_name=>bid["activity_name"],:bid_name=>bid["bid_name"])
     @analysis=Analysis.paginate(page: params[:page],per_page:10).where(:user=>bid["user"],:activity_name=>bid["activity_name"],:bid_name=>bid["bid_name"])
     @result=Result.find_by(user:bid["user"],activity_name:bid["activity_name"],bid_name:bid["bid_name"])
   end
 
-  #def result(bid)
-  #  @result=Result.find_by(user:bid["user"],activity_name:bid["activity_name"],bid_name:bid["bid_name"])
-  #  if @result["name"]="竞价未开始"||@result["name"]="竞价失败"
-  #    return  @result["name"]
-  #  else
-  #    return  @result
-  #
-  #  end
-  #
-  #end
+  def bidding_list
+      @activity_name=params[:format]
+      session[:list]="bidding_list"
+      redirect_to users_bidding_page_path(@activity_name)
+  end
+
+  def analysis_list
+    @activity_name=params[:format]
+    session[:list]="ananlysis_list"
+    redirect_to users_bidding_page_path(@activity_name)
+  end
+
 
   private
   def user_params
