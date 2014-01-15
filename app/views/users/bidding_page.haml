@@ -16,12 +16,13 @@
   -if @result["phone"]!=""
     %div(style="margin-left:1px;margin-top:5px;background-color:#F0F0F0;height:100px")
       %div(style="padding-top:10px" )
-        %h4
+        %h5
           获胜者 :
           =@result["name"]
           %br
           出价：
           =@result["price"]
+          元
           %br
           电话号：
           =@result["phone"]
@@ -37,64 +38,64 @@
       %div(style="padding-top:30px" )
         %h4
           竞价正在进行
-%div(class="index-action"style="width:1050px;margin-left:10%;padding:0px;margin-top:2%")
-  %table(class="table table-style"style="margin-top:0px;position:absolute;top:0px" )
-    %tbody
-      %tr
-        %th()
-          =link_to "竞价列表",users_bidding_list_path(@id)
-        %th
-          =link_to "统计列表",users_analysis_list_path(@id)
-  -bidding_list=@bidding_list
-  -analysis_list=@analysis_list
-  %table(class="table table-style"style="margin-top:30px;position:absolute;top:7%" show=bidding_list  )
-    %tbody
-      %tr
-        %th 编号
+%div(class="index-action"style="width:1050px;height:300px;margin-left:10%;padding:0px;margin-top:30px")
+  %ul.nav.nav-tabs(style="margin-bottom:0px")
+    %li(style="width:50%" class="border-top active" )
+      %a{"data-toggle" => "tab", :href => "#home"} 竞价列表
+    %li(style="width:50% "class="border-top" )
+      %a{"data-toggle" => "tab", :href => "#profile"} 统计列表
 
-        %th 姓名
-        %th 价格
-        %th 电话号
-      %br
-        %ul
-          -i=0
-          -@bidding.each do |t|
-            %tr
-              -i=i+1;
-              %th
-                =i
-              %th
-                =t.name
-              %th
-                =t.phone
-              %th
-                =t.price
-            %br
+  .tab-content
+    #home.tab-pane.active
+      %table(class="table table-style"style="margin-top:-70px;"   )
+        %tbody
+          %tr
+            %th 编号
+            %th 姓名
+            %th 价格
+            %th 电话号
+          %br
+            %ul
+              -i=0
+              -@bidding.each do |t|
+                %tr
+                  -i=i+1;
+                  %th
+                    =i
+                  %th
+                    =t.name
+                  %th
+                    =t.price
+                  %th
+                    =t.phone
+          %br
 
-      %div(style='bottom:-10px;width:100%;height:32px;position:absolute;')
+      %div(style='bottom:0px;width:100%;height:32px;')
         %div(style="font-size:12px;right:5%;position:absolute;" )
           =will_paginate@bidding ,{:previous_label =>'<<',:next_label => '>>'}
-  -#%table(class="table table-style"style="margin-top:30px;position:absolute;top:7%" show=analysis_list  )
-  -#  %tbody
-  -#    %tr
-  -#      %th
-  -#        编号
-  -#      %th 价格
-  -#      %th 人数
-  -#    %br
-  -#      %ul
-  -#        -i=0
-  -#        -@analysis.each do |t|
-  -#          %tr
-  -#            -i=i+1;
-  -#            %th
-  -#              =i
-  -#            %th
-  -#              =t.price
-  -#            %th
-  -#              =t.number
-  -#          %br
-  -#
-  -#  %div(style='bottom:-10px;width:100%;height:32px;position:absolute;')
-  -#    %div(style="font-size:12px;right:5%;position:absolute;" )
-  -#      =will_paginate@analysis ,{:previous_label =>'<<',:next_label => '>>'}
+    #profile.tab-pane
+      %table(class="table table-style"style="margin-top:-70px;"  )
+        %tbody
+          %tr
+            %th
+              编号
+            %th 价格
+            %th 人数
+          %br
+            %ul
+              -i=0
+              -@analysis.each do |t|
+                %tr
+                  -i=i+1;
+                  %th
+                    =i
+                  %th
+                    =t.price
+                  %th
+                    =t.number
+        %br
+
+      %div(style='bottom:0px;width:100%;height:32px;;')
+        %div(style="font-size:12px;right:5%;position:absolute;" )
+          =will_paginate@analysis ,{:previous_label =>'<<',:next_label => '>>'}
+

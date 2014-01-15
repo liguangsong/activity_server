@@ -34,7 +34,9 @@ Data.prototype.bidding = function () {
     var a = _.map(this.data["bids"], function (list) {
         return Data.bidding_list(list)
     })
+    console.log(_.flatten(a))
     return _.flatten(a)
+
 }
 
 Data.prototype.analysis = function () {

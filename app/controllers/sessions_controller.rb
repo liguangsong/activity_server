@@ -108,7 +108,6 @@ class SessionsController < ApplicationController
       if @sign_up==nil
         @sign_up=SignUp.new(t)
         @sign_up.save()
-
       end
     end
   end
@@ -140,13 +139,12 @@ class SessionsController < ApplicationController
 
   def analysis
     params[:update][:analysis].each do |t|
-      @analysis=Analysis.find_by(user: t["user"], activity_name: t["activity_name"], bid_name: t["bid_name"])
+      @analysis=Analysis.find_by(user: t["user"], activity_name: t["activity_name"], bid_name: t["bid_name"],price:t["price"])
       if @analysis==nil
         @analysis=Analysis.new(t)
         @analysis.save()
       else
         @analysis["number"]=t["number"]
-        @analysis["price"]=t["price"]
       end
     end
   end
@@ -161,7 +159,6 @@ class SessionsController < ApplicationController
         @result["name"]=t["name"]
         @result["price"]=t["price"]
         @result["phone"]=t["phone"]
-
         @result.save()
       end
     end
