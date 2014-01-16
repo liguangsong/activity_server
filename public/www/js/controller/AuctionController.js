@@ -1,4 +1,4 @@
-function AuctionController($scope, $navigate, $timeout) {
+function AuctionController($scope, $navigate, $timeout,$http) {
     var activity_name_apply_start = Activity.current_activity();
     var apply_activity_name = Activity.get_now_activity_name();
     var status = Activity.get_activity_status(apply_activity_name);
@@ -23,6 +23,7 @@ function AuctionController($scope, $navigate, $timeout) {
         $scope.no_able=false;
         Activity.activity_status_change(apply_activity_name, "start");
         Activity.create_activity_start(apply_activity_name);
+        $scope.data_synchronous()
     }
 
     $scope.stop_auction = function () {
@@ -30,6 +31,7 @@ function AuctionController($scope, $navigate, $timeout) {
         if (r == true) {
             Activity.activity_status_change(apply_activity_name, "stop");
             Activity.destroy_activity_start();
+            $scope.data_synchronous()
             $navigate.go("/auction_list");
         }
     }
@@ -41,6 +43,8 @@ function AuctionController($scope, $navigate, $timeout) {
     }
 
     $scope.data_refresh();
-
+    $scope.data_synchronous=function(){
+        synchronous($http)
+    }
 
 }

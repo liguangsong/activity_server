@@ -16,6 +16,8 @@ function ActivityListController($scope, $navigate, $http,$timeout) {
         $navigate.go("/auction")
     }
 
+
+
     $scope.synchronous_data = function () {
         var activity_of_user = Data.get_date();
         $http({method: 'post', url: '/sessions/update', data: {update: activity_of_user}}).success(
@@ -32,7 +34,6 @@ function ActivityListController($scope, $navigate, $http,$timeout) {
             })
     }
     function pop_out(respond) {
-        console.log(respond)
         $scope.pop_out_modal = true;
         $scope.success=respond=="true"
         $scope.false=respond=="false"
@@ -40,5 +41,8 @@ function ActivityListController($scope, $navigate, $http,$timeout) {
         $timeout(function () {
             $scope.pop_out_modal = false;
         }, 3000);
+    }
+    $scope.data_synchronous=function(){
+        synchronous($http)
     }
 }

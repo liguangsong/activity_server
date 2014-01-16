@@ -89,13 +89,12 @@ sms.sign_up_is_or_no_repeat = function (json_message) {
 sms.sign_up_success = function (json_message) {
     SignUp.add_sign_up(json_message);
     go_to_act_detail_page_by_name_of("auction")
+    go_to__message_synchronous("synchronous")
 }
 
 sms.is_or_no_bidding = function (json_message) {
     var is_bidding = Bidding.bidding_status();
-
     if (!(is_bidding ==true)) {
-
         return sms.is_or_no_sign_up(json_message);
     }
     //    return send;
@@ -104,17 +103,16 @@ sms.is_or_no_bidding = function (json_message) {
 sms.is_or_no_sign_up = function (json_message) {
     var phone = sms.get_phone(json_message);
     if (Bidding.bid_is_or_not_sign_up(phone)!=false) {
-
         return sms.is_or_no_bid_repeat(json_message)
     }
 //    return:send;
 }
 
 sms.is_or_no_bid_repeat = function (json_message) {
-    console.log(Bidding.is_or_no_bid_repeat(json_message)==false)
     if (Bidding.is_or_no_bid_repeat(json_message)==false) {
          Bidding.bid_success(json_message);
         go_to_act_detail_page_by_name_of("bidder_list")
+        go_to__message_synchronous("synchronous")
     }
 //    return ;
 }
@@ -125,6 +123,16 @@ go_to_act_detail_page_by_name_of = function (act_name) {
         var scope = angular.element(page_jump_or_not).scope();
         scope.$apply(function () {
             scope.data_refresh();
+        })
+    }
+}
+
+go_to__message_synchronous = function (act_name) {
+    var page_jump_or_not = document.getElementById(act_name)
+    if (page_jump_or_not) {
+        var scope = angular.element(page_jump_or_not).scope();
+        scope.$apply(function () {
+            scope.data_synchronous();
         })
     }
 }

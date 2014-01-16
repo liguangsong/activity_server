@@ -40,7 +40,6 @@ class UsersController < ApplicationController
   end
 
   def quit
-    p '----------------'
     session[:user]=nil;
     redirect_to new_session_path;
   end
@@ -54,8 +53,10 @@ class UsersController < ApplicationController
 
   def show
     if !check_user_login
-    @user = User.find_by(id:params[:id])
-    @activity=Activity.paginate(page: params[:page], per_page: 10).where(:user_name=>@user["name"])
+      @user = User.find_by(id: params[:id])
+      @disabled=BidList.find_by(user: @user["name"], status: "start")!=nil
+      @activity=Activity.paginate(page: params[:page], per_page: 10).where(:user_name => @user["name"])
+
     end
   end
 
@@ -126,50 +127,50 @@ class UsersController < ApplicationController
 
   def bid_list_page
     if !check_user_login
-    @activity_name=params[:format]
-    @user=session[:user]
-    @id=User.find_by(name:@user)["id"]
-    @bid_list=BidList.paginate(page: params[:page], per_page: 10).where(:user=>@user,:activity_name=>@activity_name)
-     end
+      @activity_name=params[:format]
+      @user=session[:user]
+      @id=User.find_by(name: @user)["id"]
+      @bid_list=BidList.paginate(page: params[:page], per_page: 10).where(:user => @user, :activity_name => @activity_name)
+    end
   end
 
   def sign_up_page
     if !check_user_login
-    @activity_name=params[:format]
-    @user=session[:user]
-    @id=User.find_by(name:@user)["id"]
-    @sign_up=SignUp.paginate(page: params[:page], per_page: 10).where(:user=>@user,:activity_name=>@activity_name)
+      @activity_name=params[:format]
+      @user=session[:user]
+      @id=User.find_by(name: @user)["id"]
+      @sign_up=SignUp.paginate(page: params[:page], per_page: 10).where(:user => @user, :activity_name => @activity_name)
     end
   end
 
   def bidding_page
     if !check_user_login
-    @id=params[:format]
-    @user=session[:user]
-    @user_id=User.find_by(name:@user)["id"]
-    bid=BidList.find_by(id:@id)
-    @bid_name=bid["bid_name"]
-    @activity_name=bid["activity_name"]
-    if session[:list]==nil||session[:list]=="bidding_list"
-      @bidding_list=true
-      @analysis_list=false
-    else
-      @bidding_list=false
-      @analysis_list=true
-    end
-    @activity_name=bid["activity_name"]
-    @bidding=Bidding.paginate(page: params[:page],per_page:10).where(:user=>bid["user"],:activity_name=>bid["activity_name"],:bid_name=>bid["bid_name"])
-    @analysis=Analysis.paginate(page: params[:page],per_page:10).where(:user=>bid["user"],:activity_name=>bid["activity_name"],:bid_name=>bid["bid_name"])
-    @result=Result.find_by(user:bid["user"],activity_name:bid["activity_name"],bid_name:bid["bid_name"])
+      @id=params[:format]
+      @user=session[:user]
+      @user_id=User.find_by(name: @user)["id"]
+      @bid=BidList.find_by(id: @id)
+      @bid_name=@bid["bid_name"]
+      @activity_name=@bid["activity_name"]
+      if session[:list]==nil||session[:list]=="bidding_list"
+        @bidding_list=true
+        @analysis_list=false
+      else
+        @bidding_list=false
+        @analysis_list=true
+      end
+      @activity_name=@bid["activity_name"]
+      @bidding=Bidding.paginate(page: params[:page], per_page: 10).where(:user => @bid["user"], :activity_name => @bid["activity_name"], :bid_name => @bid["bid_name"])
+      @analysis=Analysis.paginate(page: params[:page], per_page: 10).where(:user => @bid["user"], :activity_name => @bid["activity_name"], :bid_name => @bid["bid_name"])
+      @result=Result.find_by(user: @bid["user"], activity_name: @bid["activity_name"], bid_name: @bid["bid_name"])
     end
 
   end
 
   def bidding_list
     if !check_user_login
-    @activity_name=params[:format]
-    session[:list]="bidding_list"
-    redirect_to users_bidding_page_path(@activity_name)
+      @activity_name=params[:format]
+      session[:list]="bidding_list"
+      redirect_to users_bidding_page_path(@activity_name)
     end
 
   end
@@ -181,6 +182,21 @@ class UsersController < ApplicationController
 
   end
 
+  def synchronous_show
+    @user_name=session[:user]
+    @bid=BidList.find_by(user: @user_name, status: "start")
+    session[:synchronous_bid_name]=@bid["bid_name"]
+    session[:synchronous_activity_name]=@bid["activity_name"]
+    redirect_to users_synchronous_page_path
+  end
+
+  def synchronous_page
+    @user=session[:user]
+    @user_id=User.find_by(name: @user)["id"]
+    @bid=BidList.find_by(user: session[:user], activity_name: session[:synchronous_activity_name], bid_name: session[:synchronous_bid_name])
+    @bidding=Bidding.paginate(page: params[:page], per_page: 10).where(user: @bid["user"], activity_name: @bid["activity_name"], bid_name: @bid["bid_name"])
+    @result=Result.find_by(user: @bid["user"], activity_name: @bid["activity_name"], bid_name: @bid["bid_name"])
+  end
 
   private
   def user_params

@@ -49,6 +49,7 @@ Bidding.bid_success = function (json_message) {
     });
 
     user.save_activity_of_user(activity_of_user);
+
 }
 
 Bidding.get_name=function(activity_name,phone){

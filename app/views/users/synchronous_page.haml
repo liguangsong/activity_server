@@ -1,0 +1,65 @@
+%h1
+  活动通
+%p(class="header-right"style="margin-top:1%")
+  你好，
+  =session[:user]
+  =link_to '退出',users_quit_path
+%div(style="background-color:#e8e8e8;width:700px;height:50px;width:100%" )
+  %div(style="height:25px;margin-top:12px;position:absolute;margin-left:3%" )
+    =link_to '首页',user_path(@user_id)
+    %span(style="color:gray") / 同步展示
+
+%div(class="index-action" style="width:1050px;height:200px;margin-left:10%;margin-top:2%;padding:0px" )
+  -if @result["phone"]!=""
+    %div(style="margin-left:1px;margin-top:5px;background-color:#F0F0F0;height:200px")
+      %div(style="padding-top:10px" )
+        %h1
+          =@bid["activity_name"]
+        %h2
+          比赛结果：
+        %h3
+          获胜者 :
+          =@result["name"]
+          %br
+          出价：
+          =@result["price"]
+          元
+          %br
+          电话号：
+          =@result["phone"]
+  -if @result["name"]=="竞价失败"&&@result["phone"]==""
+    %div(style="margin-left:1px;margin-top:10px;background-color:#F0F0F0;height:200px")
+      %div(style="padding-top:30px" )
+        %h1
+          =@bid["activity_name"]
+        %h3
+          比赛结果：
+        %h4
+          本次竞价无人胜出
+  -if @result["name"]=="竞价正在经行"
+    %div(style="margin-left:1px;margin-top:10px;background-color:#F0F0F0;height:200px")
+      %div(style="padding-top:30px" )
+        %h1
+          =@bid["activity_name"]
+        %h3
+          %span 参加人数：
+          =@bid["number"]
+          %span /
+          =@bid["sign_up_number"]
+%div(class="index-action"style="width:1050px;height:300px;margin-left:10%;padding:0px;margin-top:30px")
+  -if @result["name"]=="竞价正在经行"
+    %table(class="table table-style"style="margin-top:1px;position:absolute;top:7%" )
+      %tbody
+        %tr
+          %th 姓名
+          %th 手机号
+        %br
+          %ul
+            -@bidding.each do |t|
+              %tr
+                %th
+                  =t.name
+                %th
+                  =t.phone
+
+              %br

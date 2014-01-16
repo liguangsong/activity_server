@@ -1,4 +1,4 @@
-function AuctionListController($scope, $navigate,$timeout) {
+function AuctionListController($scope, $navigate,$timeout,$http) {
 
     var activity_name=Activity.get_now_activity_name();
     var bid_start_name=Bid.get_bid_start_name();
@@ -13,6 +13,7 @@ function AuctionListController($scope, $navigate,$timeout) {
         Bid.add_auction(activity_name);
         Activity.activity_status_change(activity_name, "start_bid")
         Activity.create_activity_start(activity_name)
+        $scope.data_synchronous()
         $navigate.go("/bidder_list");
     }
 
@@ -30,5 +31,7 @@ function AuctionListController($scope, $navigate,$timeout) {
        $navigate.go("/auction")
     }
     list_loading();
-
+    $scope.data_synchronous=function(){
+        synchronous($http)
+    }
 }

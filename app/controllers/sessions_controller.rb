@@ -86,11 +86,9 @@ class SessionsController < ApplicationController
     activity
     sign_up
     bidding
-    p '----2-------'
     bid_list
     analysis
     result
-    p '---1---'
     respond_to do |format|
       format.json { render :json => 'true' }
     end
@@ -126,6 +124,10 @@ class SessionsController < ApplicationController
       if @bidding==nil
         @bidding=Bidding.new(t)
         message_save(@bidding)
+      else
+        @bidding.delete()
+        @bidding=Bidding.new(t)
+        message_save(@bidding)
       end
     end
   end
@@ -137,9 +139,11 @@ class SessionsController < ApplicationController
         @bid_list=BidList.new(t)
         message_save(@bid_list)
       else
-        @bid_list["number"]=t["number"]
-        @bid_list["status"]=t["status"]
-        @bid_list["sign_up_number"]=t["sign_up_number"]
+        #@bid_list["number"]=t["number"]
+        #@bid_list["status"]=t["status"]
+        #@bid_list["sign_up_number"]=t["sign_up_number"]
+        @bid_list.delete()
+        @bid_list=BidList.new(t)
         message_save(@bid_list)
       end
     end
@@ -155,6 +159,10 @@ class SessionsController < ApplicationController
         @analysis["number"]=t["number"]
         message_save(@analysis)
       end
+      p '-----'
+      p @analysis["number"]
+      p @analysis["price"]
+      p '------'
     end
   end
 
@@ -186,7 +194,6 @@ class SessionsController < ApplicationController
   def activity_params
     params.require(:update).permit(:activity, :sign_up, :bidding_page, :analysis, :result)
   end
-
 
 end
 

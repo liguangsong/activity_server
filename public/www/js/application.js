@@ -43,47 +43,14 @@ $(document).ready(function () {
 
 
 });
+function synchronous($http){
+    var activity_of_user = Data.get_date();
+    $http({method: 'post', url: '/sessions/update', data: {update: activity_of_user}}).success(
+        function (respond, statue) {
+           return respond
+        })
+        .error(function () {
+            return "error"
+        })
+}
 
-
-//////
-//var native_accessor = {
-//    process_received_message: function (json_message) {
-//        judge_and_process_received_apply_message(json_message);
-//    },
-//
-//    send_sms: function (phone, message) {
-//
-//        native_access.send_sms({"receivers": [
-//            {"name": 'name', "phone": phone}
-//        ]}, {"message_content": message});
-//    },
-//
-//    receive_message: function (json_message) {
-//
-//        if (typeof this.process_received_message === 'function') {
-//
-//            this.process_received_message(json_message);
-//        }
-//    }
-//};
-
-
-//function judge_and_process_received_apply_message(json_message) {
-//    var temp_message = json_message.messages[0].message;
-//    if (temp_message.substr(0, 2).toUpperCase() == 'BM') {
-//        SMS.sign_up_is_or_no_fail(json_message);
-//    }
-//    if(temp_message.substr(0,2).toUpperCase()=="JJ"){
-//        SMS.is_price_or_not(json_message);
-//    }
-//}
-//
-//go_to_act_detail_page_by_name_of = function (act_name) {
-//    var page_jump_or_not = document.getElementById(act_name)
-//    if (page_jump_or_not) {
-//        var scope = angular.element(page_jump_or_not).scope();
-//        scope.$apply(function () {
-//            scope.data_refresh();
-//        })
-//    }
-//}

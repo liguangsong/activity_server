@@ -1,4 +1,4 @@
-function BidderListController($scope, $navigate, $timeout) {
+function BidderListController($scope, $navigate, $timeout,$http) {
     var list_activity_name = Activity.get_now_activity_name();
     $scope.list_auction_name = Bid.get_now_bid_name();
 
@@ -59,10 +59,13 @@ function BidderListController($scope, $navigate, $timeout) {
             $scope.sort = Bidding.sorting(list_activity_name, $scope.list_auction_name);
             pop_out();
             button();
-            ;
+            $scope.data_synchronous()
         }
     }
 
     $scope.data_refresh();
     button();
+    $scope.data_synchronous=function(){
+        synchronous($http)
+    }
 }
