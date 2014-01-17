@@ -54,9 +54,8 @@ class UsersController < ApplicationController
   def show
     if !check_user_login
       @user = User.find_by(id: params[:id])
-      @disabled=BidList.find_by(user: @user["name"], status: "start")!=nil
+      @disabled=BidList.find_by(user: @user["name"], status: "start")==nil
       @activity=Activity.paginate(page: params[:page], per_page: 10).where(:user_name => @user["name"])
-
     end
   end
 
@@ -185,9 +184,14 @@ class UsersController < ApplicationController
   def synchronous_show
     @user_name=session[:user]
     @bid=BidList.find_by(user: @user_name, status: "start")
-    session[:synchronous_bid_name]=@bid["bid_name"]
-    session[:synchronous_activity_name]=@bid["activity_name"]
-    redirect_to users_synchronous_page_path
+    if(@bid!=nil)
+      session[:synchronous_bid_name]=@bid["bid_name"]
+      session[:synchronous_activity_name]=@bid["activity_name"]
+      redirect_to users_synchronous_page_path
+    else
+       @id=User.find_by(name:@user_name)["id"]
+       redirect_to user_path(@id)
+    end
   end
 
   def synchronous_page

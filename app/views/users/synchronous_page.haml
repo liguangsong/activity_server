@@ -1,3 +1,9 @@
+%script{:language => "JavaScript"}
+  function myrefresh()
+  {
+  window.location.reload();
+  }
+  setTimeout('myrefresh()',3000);
 %h1
   活动通
 %p(class="header-right"style="margin-top:1%")
@@ -15,9 +21,9 @@
       %div(style="padding-top:10px" )
         %h1
           =@bid["activity_name"]
-        %h2
-          比赛结果：
         %h3
+          比赛结果：
+        %h5
           获胜者 :
           =@result["name"]
           %br
