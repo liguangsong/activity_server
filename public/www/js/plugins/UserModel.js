@@ -25,6 +25,8 @@ user.get_activity_of_user=function(){
 user.save_activity_of_user=function(activity_of_user){
     var user_name=user.get_user_name();
     localStorage.setItem(user_name,JSON.stringify(activity_of_user))
+    return "true"
+
 }
 
 

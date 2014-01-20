@@ -1,16 +1,16 @@
 # coding: utf-8
 class AdminsController < ApplicationController
+  before_action :check_admin_login ,only: [:new, :create ,:add_new_user_page,:add_new_user,:show,:destroy,:repair_user_password_page,:repair_user_password,:show_user_activity]
+
+  def check_admin_login
+    if session[:admin]==nil
+      redirect_to new_session_path
+    end
+  end
 
   def quit
     session[:admin]=nil;
     redirect_to new_session_path;
-  end
-
-  def check_login
-    if session[:admin]==nil
-      redirect_to new_session_path
-    end
-    return session[:admin]==nil
   end
 
   def new
@@ -21,24 +21,22 @@ class AdminsController < ApplicationController
     @admin = Admin.new(admin_params)
     if @admin.save
       redirect_to admin_path(@admin[:id])
+      return
     end
   end
 
   def add_new_user_page
     flash[:error]=''
-    if !check_login
-      @user=User.new
-      @id=params[:format]
-    end
+    @user=User.new
+    @id=Admin.find_by(name: session[:admin])["id"]
   end
 
   def add_new_user
-    @id=params[:format]
+
+    @id=Admin.find_by(name: session[:admin])["id"]
     @user = User.new(user_params)
     name=user_params[:name]
-    if !check_login
-      return name_is_or_not_exist(name)
-    end
+    return name_is_or_not_exist(name)
   end
 
   def name_is_or_not_exist(name)
@@ -77,26 +75,21 @@ class AdminsController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    if !check_login
-      @user.destroy
-      redirect_to admin_path
-    end
+    @user.destroy
+    redirect_to admin_path
+    return
   end
 
   def repair_user_password_page
     @user=User.find_by(id: params[:format])
-    if !check_login
-      @id=Admin.find_by(name: session[:admin])[:id]
-    end
+    @id=Admin.find_by(name: session[:admin])[:id]
   end
 
   def repair_user_password
-    @id=session[:user]
-    name=params[:format]
-    @user=User.find_by(name: name)
-    if !check_login
+    @id=session[:admin]
+    @name=params[:format]
+    @user=User.find_by(name: @name)
       repair_password_is_or_not_some
-    end
   end
 
   def repair_password_is_or_not_some
@@ -122,9 +115,10 @@ class AdminsController < ApplicationController
   end
 
   def show_user_activity
-      session[:user]=params[:format]
-      id=User.find_by(name:params[:format])
-      redirect_to user_path(id)
+    session[:user]=params[:format]
+    id=User.find_by(name: params[:format])
+    redirect_to user_path(id)
+    return
   end
 
   private
@@ -139,6 +133,5 @@ class AdminsController < ApplicationController
   def users_password
     params.require(:users_password).permit(:password, :password_confirmation)
   end
-
 
 end

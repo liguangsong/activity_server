@@ -48,8 +48,8 @@ Bidding.bid_success = function (json_message) {
         return list
     });
 
-    user.save_activity_of_user(activity_of_user);
-
+        Bidding.message_analysis(activity_name,bid_name)
+        go_to__message_synchronous("synchronous")
 }
 
 Bidding.get_name=function(activity_name,phone){
@@ -105,12 +105,15 @@ Bidding.bidding_list=function(activity_name,bid_name){
 }
 
 Bidding.message_analysis=function(activity_name,bid_name){
+    console.log("3")
     var activity_of_user=user.get_activity_of_user()
     var bid_of_activity=activity_of_user["bids"]
     activity_of_user["bids"]=_.map(bid_of_activity,function(list){
         if(list["activity_name"]==activity_name&&list["bid_name"]==bid_name){
             list['analysis']= Bidding.groupby_bidding(list["biddings"])
         }
+        console.log(list["bid_name"])
+        console.log(list["analysis"])
         return list
     })
     user.save_activity_of_user(activity_of_user)

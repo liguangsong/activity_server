@@ -8,5 +8,16 @@ class ApplicationController < ActionController::Base
   #  # you can disable csrf protection on controller-by-controller basis:
   #  skip_before_filter :verify_authenticity_token
   #end
+  def update_error
+    respond_to do |format|
+      format.json { render :json => 'false' }
+    end
+  end
+
+  def update_success
+    respond_to do |format|
+      format.json { render :json => 'true' }
+    end
+  end
 
 end

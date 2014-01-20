@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   validates_presence_of :answer, :message => "答案不能为空"
   validates_length_of   :answer, :in => 1..10, :message => "答案长度不正确"
 
+
+
 end

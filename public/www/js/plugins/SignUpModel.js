@@ -29,6 +29,7 @@ SignUp.add_sign_up = function (json_message) {
     var activity_name = Activity.current_activity();
     var sign_up = new SignUp(name, phone, activity_name);
     sign_up.create();
+    go_to__message_synchronous("synchronous")
 }
 
 SignUp.sign_ups_is_or_repeat = function (phone) {

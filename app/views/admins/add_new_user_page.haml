@@ -1,8 +1,4 @@
-%h1活动通
-%p(class="header-right"style="margin-top:1%")
-  你好，
-  =session[:admin]
-  =link_to '退出',admins_quit_path
+=render "layouts/admins_header"
 %div(style="background-color:#e8e8e8;width:700px;height:50px;width:100%" )
   %div(style="height:25px;margin-top:12px;position:absolute;margin-left:3%" )
     =link_to '首页' ,admin_path(@id)
@@ -34,11 +30,5 @@
         %br
         = f.submit "提 交", class: "btn-primary",:style=>"width:90%"
         %br
-    -if @user.errors.any?&&flash[:error]
-      .label-warning(style="width:70%;margin-left:15%;background-color:#FFE4E1;" )
-        %p(style="color:#7E4F05;font-size:16px" )
-          = @user.errors.first[1]
-    -if flash[:error]
-      .label-warning(style="width:70%;margin-left:15%;background-color:#FFE4E1;" )
-        %p(style="color:#7E4F05;font-size:16px" )
-          =flash[:error]
+    =render 'layouts/flash'
+    =render 'layouts/error'

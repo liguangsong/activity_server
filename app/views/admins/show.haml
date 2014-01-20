@@ -1,16 +1,11 @@
 %div
-  %h1
-    活动通
-  %p(class="header-right"style="margin-top:1%")
-    你好，
-    =@admin[:name]
-    =link_to '退出',admins_quit_path
+  =render "layouts/admins_header"
   %div(class="index-action" style="width:1050px;height:480px;margin-left:10%;margin-top:2%;padding:0px" )
     %div(style="margin-left:1px;margin-top:10px;background-color:#F0F0F0;height:90px"  )
       %span(class="header-left" style="font-size:16px;margin-top:5px" )
         管理用户
         %button(style="margin-left:3px" )
-          =link_to '添加用户',admins_add_new_user_page_path(@admin[:id]) ,:style =>'color:black'
+          =link_to '添加用户',admins_add_new_user_page_path ,:style =>'color:black'
     %table(class="table table-style"style="margin-top:1px;position:absolute;top:7%" )
       %tbody
         %tr

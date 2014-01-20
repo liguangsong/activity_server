@@ -25,6 +25,7 @@ ActivityServer::Application.routes.draw do
   get "users_quit"=>"users#quit"
   get 'users_synchronous_show'=>'users#synchronous_show'
   get 'users_synchronous_page'=>'users#synchronous_page'
+  #get 'sessions_message_save'=>'sessions#message_save'
   #get 'users'=>'users#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

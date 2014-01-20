@@ -39,7 +39,7 @@ Data.prototype.bidding = function () {
 Data.prototype.analysis = function () {
 
     var a = _.map(this.data["bids"], function (list) {
-        Bidding.message_analysis(list["activity_name"],list["bid_name"])
+
         return Data.analysis_list(list)
     })
     return _.flatten(a)
