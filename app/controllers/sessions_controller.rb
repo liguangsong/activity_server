@@ -1,6 +1,5 @@
 # coding: utf-8
 class SessionsController < ApplicationController
-  include SessionsHelper
 
   def new
     flash[:error]=''
@@ -11,52 +10,29 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if name_empty?(params[:session][:name])==true
-      flash.now[:error]='请输入用户名'
-      return render 'new'
+    case User.name_empty?(params)
+      when "error"
+        @error="true"
+       return render 'new'
+      when 'name_empty'
+        @error="name_empty"
+        return render "new"
+      when  'password_empty'
+        @error="password_empty"
+        return render "new"
+      else
+        return login_in(User.name_empty?(params))
     end
-    return is_or_not_input_password(params[:session][:name], params[:session][:password])
   end
 
-  def is_or_not_input_password(name, password)
-    if password_empty?(password)==true
-      flash.now[:error]='请输入密码'
-      return render 'new'
-    end
-    return user_name_is_or_not_exist(name, password)
-  end
-
-  def user_name_is_or_not_exist(name, password)
-    admin=Admin.find_by(name: name)
-    user=User.find_by(name: name)
-    if user==nil&&admin==nil
-      flash.now[:error]='用户名或密码不正确'
-      return render 'new'
-    end
-    return name_is_or_not_a_admin(password, admin, user)
-  end
-
-  def name_is_or_not_a_admin(password, admin, user)
-    if admin!=nil&&password==admin[:password]
-      session[:admin]=admin[:name]
-      return redirect_to admin_path(admin[:id])
-    end
-    return name_is_or_not_a_user(password, admin, user)
-  end
-
-  def name_is_or_not_a_user(password, admin, user)
-    if user!=nil&&password==user[:password]
-      session[:user]=user[:name]
-      redirect_to user_path(user[:id])
+  def login_in(message)
+    if message[:name]=="admin"
+        session[:admin]=User.name_empty?(params)[:session]
+        return redirect_to admin_path(message[:message])
     else
-      flash.now[:error]='用户名或密码不正确'
-      render 'new'
+        session[:user]=message[:session]
+        return redirect_to user_path(message[:message])
     end
-  end
-
-  def name_or_password_error
-    flash.now[:error]='用户名或密码不正确'
-    render 'new'
   end
 
   def user_authentication
@@ -98,7 +74,6 @@ class SessionsController < ApplicationController
   def activity_params
     params.require(:update).permit(:activity, :sign_up, :bidding_page, :analysis, :result)
   end
-
 
 end
 
