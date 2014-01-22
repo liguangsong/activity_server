@@ -1,9 +1,10 @@
-%script{:language => "JavaScript"}
-  function myrefresh()
-  {
-  window.location.reload();
-  }
-  setTimeout('myrefresh()',3000);
+-#%script{:language => "JavaScript"}
+-#  function myrefresh()
+-#  {
+-#  window.location.reload();
+-#  }
+-#  setTimeout('myrefresh()',3000);
+%meta(hidden="refresh" content="3000" )
 =render "layouts/header"
 %div(class="user-div-3" )
   %div(class="user-div-4" )
