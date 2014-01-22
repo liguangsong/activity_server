@@ -1,16 +1,16 @@
 =render "layouts/header"
-%div(style="background-color:#e8e8e8;width:700px;height:50px;width:100%" )
-  %div(style="height:25px;margin-top:12px;position:absolute;margin-left:3%" )
+%div(class="user-div-3" )
+  %div(class="user-div-4")
     =link_to '首页' ,user_path(@user_id)
     %span(style="color:gray") /
     =link_to "竞价列表",users_bid_list_page_path(@activity_name)
     %span(style="color:gray") /
     %span
       =@bid_name
-%div(class="index-action" style="width:1050px;height:100px;margin-left:10%;margin-top:2%;padding:0px" )
-  -if @result["phone"]!=""
-    %div(style="margin-left:1px;margin-top:5px;background-color:#F0F0F0;height:100px")
-      %div(style="padding-top:10px" )
+%div(class="index-action user-result-div" )
+  %div(class="user-result")
+    %div(style="padding-top:10px" )
+      -if @result["phone"]!=""
         %h5
           获胜者 :
           =@result["name"]
@@ -21,27 +21,22 @@
           %br
           电话号：
           =@result["phone"]
-
-  -if @result["name"]=="竞价失败"&&@result["phone"]==""
-    %div(style="margin-left:1px;margin-top:10px;background-color:#F0F0F0;height:100px")
-      %div(style="padding-top:30px" )
+      -if @result["name"]=="竞价失败"&&@result["phone"]==""
         %h4
           本次竞价无人胜出
-  -if @result["name"]=="竞价正在经行"
-    %div(style="margin-left:1px;margin-top:10px;background-color:#F0F0F0;height:100px")
-      %div(style="padding-top:30px" )
+      -if @result["name"]=="竞价正在经行"
         %h4
           竞价正在进行
-%div(class="index-action"style="width:1050px;height:300px;margin-left:10%;padding:0px;margin-top:30px")
+%div(class="index-action user-result-list")
   %ul.nav.nav-tabs(style="margin-bottom:0px")
-    %li(style="width:50%" class="border-top active" )
+    %li( class="border-top active width-1" )
       %a{"data-toggle" => "tab", :href => "#home"} 竞价列表
-    %li(style="width:50% "class="border-top" )
+    %li(class="border-top width-1" )
       %a{"data-toggle" => "tab", :href => "#profile"} 统计列表
 
   .tab-content
     #home.tab-pane.active
-      %table(class="table table-style"style="margin-top:-70px;"   )
+      %table(class="table table-style user-bidding"   )
         %tbody
           %tr
             %th 编号
@@ -64,11 +59,11 @@
                     =t.phone
           %br
 
-      %div(style='bottom:0px;width:100%;height:32px;')
-        %div(style="font-size:12px;right:5%;position:absolute;" )
+      %div(style='bottom:-10px;width:100%;height:32px;position:absolute;')
+        %div(style="font-size:12px;right:5%;position:absolute;"  )
           =will_paginate@bidding ,{:previous_label =>'<<',:next_label => '>>'}
     #profile.tab-pane
-      %table(class="table table-style"style="margin-top:-70px;"  )
+      %table(class="table table-style user-bidding" )
         %tbody
           %tr
             %th
@@ -89,7 +84,7 @@
                     =t.number
         %br
 
-      %div(style='bottom:0px;width:100%;height:32px;;')
-        %div(style="font-size:12px;right:5%;position:absolute;" )
+      %div(class="will_paginate-div")
+        %div(class="will-paginate")
           =will_paginate@analysis ,{:previous_label =>'<<',:next_label => '>>'}
 

@@ -1075,8 +1075,8 @@ label {
 
 select,
 textarea,
-input[type="text"],
-input[type="password"],
+/*input[type="text"],*/
+/*input[type="password"],*/
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="date"],
@@ -1176,7 +1176,7 @@ input[type="checkbox"] {
 
 input[type="file"],
 input[type="image"],
-input[type="submit"],
+/*input[type="submit"],*/
 input[type="reset"],
 input[type="button"],
 input[type="radio"],
@@ -1713,8 +1713,8 @@ select:focus:invalid:focus {
 .input-append .add-on,
 .input-prepend .add-on {
   display: inline-block;
-  width: auto;
-  height: 20px;
+  /*width: auto;*/
+  /*height: 20px;*/
   min-width: 16px;
   padding: 4px 5px;
   font-size: 14px;

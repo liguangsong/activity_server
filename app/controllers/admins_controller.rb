@@ -1,6 +1,6 @@
 # coding: utf-8
 class AdminsController < ApplicationController
-  before_action :check_admin_login ,only: [:new, :create ,:add_new_user_page,:add_new_user,:show,:destroy,:repair_user_password_page,:repair_user_password,:show_user_activity]
+  before_action :check_admin_login, only: [:new, :create, :add_new_user_page, :add_new_user, :show, :destroy, :repair_user_password_page, :repair_user_password, :show_user_activity]
 
   def check_admin_login
     if session[:admin]==nil
@@ -26,7 +26,7 @@ class AdminsController < ApplicationController
   end
 
   def add_new_user_page
-    flash[:error]=''
+    @error=''
     @user=User.new
     @id=Admin.find_by(name: session[:admin])["id"]
   end
@@ -41,7 +41,7 @@ class AdminsController < ApplicationController
 
   def name_is_or_not_exist(name)
     if User.find_by(name: name)!=nil||Admin.find_by(name: name)!=nil;
-      flash[:error]="此用户名已存在"
+      @error="user_name_exist"
       render 'add_new_user_page'
       return
     end
@@ -52,7 +52,7 @@ class AdminsController < ApplicationController
     if user_params[:password]==user_params[:password_confirmation]
       user_is_or_not_save
     else
-      flash[:error]="两次密码不一致"
+      @error="two_password_not_same"
       render 'add_new_user_page'
       return
     end
@@ -89,7 +89,7 @@ class AdminsController < ApplicationController
     @id=session[:admin]
     @name=params[:format]
     @user=User.find_by(name: @name)
-      repair_password_is_or_not_some
+    repair_password_is_or_not_some
   end
 
   def repair_password_is_or_not_some
@@ -98,7 +98,7 @@ class AdminsController < ApplicationController
       @user[:password_confirmation]=params[:users_password][:password_confirmation]
       repair_password_is_or_not_empty
     else
-      flash[:error]="两次密码不一致"
+      @error="two_password_not_same"
       render 'repair_user_password_page'
       return
     end

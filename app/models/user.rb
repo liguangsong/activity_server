@@ -36,18 +36,40 @@ class User < ActiveRecord::Base
   def self.name_is_or_not_a_admin(password, admin, user)
     if admin!=nil&&password==admin[:password]
       @id =admin[:id]
-      return {:name=> "admin",:message=>@id,:session=>admin[:name]}
+      return {:name => "admin", :message => @id, :session => admin[:name]}
     end
-    return  User.name_is_or_not_a_user(password, admin, user)
+    return User.name_is_or_not_a_user(password, admin, user)
   end
 
   def self.name_is_or_not_a_user(password, admin, user)
     if user!=nil&&password==user[:password]
       @id =user[:id]
-      return {:name=>"user",:message=>@id,:session=>user[:name]}
+      return {:name => "user", :message => @id, :session => user[:name]}
     else
       return "error"
     end
   end
+
+  def self.name_is_or_not_exist(user_params)
+    user = User.new(user_params)
+    if User.find_by(name: user_params[:name])==nil
+      return User.repair_password(user_params, user)
+
+    end
+    return "user_name_exist"
+  end
+
+  def self.repair_password(user_params, user)
+    if user_params[:password]==user_params[:password_confirmation]
+      return User.user_is_or_not_save(user)
+    else
+      return "two_password_not_same"
+    end
+  end
+
+  def self.user_is_or_not_save(user)
+    return "else"
+  end
+
 
 end

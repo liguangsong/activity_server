@@ -1,4 +1,29 @@
+
 -if @error=="true"
   .label-warning(style="width:70%;padding-top:1px;padding-bottom:0.5px;margin-left:15%;background-color:#FFE4E1;" )
     %p(style="color:#7E4F05;font-size:15px;margin-top:5px" )
       用户名密码错误
+-if @error=="name_empty"
+  .label-warning(style="width:70%;padding-top:1px;padding-bottom:0.5px;margin-left:15%;background-color:#FFE4E1;" )
+    %p(style="color:#7E4F05;font-size:15px;margin-top:5px" )
+      用户名不能为空
+-if @error=="password_empty"
+  .label-warning(style="width:70%;padding-top:1px;padding-bottom:0.5px;margin-left:15%;background-color:#FFE4E1;" )
+    %p(style="color:#7E4F05;font-size:15px;margin-top:5px" )
+      用户名密码不能为空
+-if @error=="user_name_exist"
+  .label-warning(style="width:70%;padding-top:1px;padding-bottom:0.5px;margin-left:15%;background-color:#FFE4E1;" )
+    %p(style="color:#7E4F05;font-size:15px;margin-top:5px" )
+      用户名已存在
+-if @error=="two_password_not_same"
+  .label-warning(style="width:70%;padding-top:1px;padding-bottom:0.5px;margin-left:15%;background-color:#FFE4E1;" )
+    %p(style="color:#7E4F05;font-size:15px;margin-top:5px" )
+      兩次密碼不一致
+-if @error=="name_no_exit"
+  .label-warning(style="width:70%;padding-top:1px;padding-bottom:0.5px;margin-left:15%;background-color:#FFE4E1;" )
+    %p(style="color:#7E4F05;font-size:15px;margin-top:5px" )
+      用户名不存在
+-if @error=="answer_error"
+  .label-warning(style="width:70%;padding-top:1px;padding-bottom:0.5px;margin-left:15%;background-color:#FFE4E1;" )
+    %p(style="color:#7E4F05;font-size:15px;margin-top:5px" )
+      密保答案错误

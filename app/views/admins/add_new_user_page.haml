@@ -1,30 +1,30 @@
 =render "layouts/admins_header"
-%div(style="background-color:#e8e8e8;width:700px;height:50px;width:100%" )
-  %div(style="height:25px;margin-top:12px;position:absolute;margin-left:3%" )
+%div(class="user-div-3" )
+  %div(class="user-div-4" )
     =link_to '首页' ,admin_path(@id)
     %span(style="color:gray") / 添加用户
-%div(class="index-action" style="text-align:center;width:550px;background-color:#e8e8e8;margin-left:30%;margin-top:5%;padding:20px")
+%div(class="index-action user-div-1" )
   %div(class="index-login"style="margin-top:10px" )
     %div(class="input-prepend"style="margin:30px")
       = form_for :users,url:admins_add_new_user_path(@id) do |f|
-        = f.label '帐  号',:class=>"add-on",:style=>"height:10%;width:100px"
-        = f.text_field :name,:style=>"height:10%;width:70%"
+        = f.label '帐  号',:class=>"user-on add-on"
+        = f.text_field :name,:class=>"user-input",:placeholder=>'请输入您的账号'
         %br
         %br
-        = f.label "密  码",:class=>"add-on",:style=>"height:10%;width:100px"
-        = f.text_field :password ,:type=>"password",:style=>"height:10%;width:70%"
+        = f.label "设置密码",:class=>"user-on add-on"
+        = f.text_field :password ,:class=>"user-input",:placeholder=>'请输入您的密码'
         %br
         %br
-        = f.label '确认密码',:class=>"add-on",:style=>"height:10%;width:100px"
-        = f.text_field :password_confirmation,:type=>"password",:style=>"height:10%;width:70%"
+        = f.label '确认密码',:class=>"add-on user-on"
+        = f.text_field :password_confirmation,:type=>"password",:class=>"user-input",:placeholder=>'请输入您的密码'
         %br
         %br
-        = f.label '密保问题',:class=>"add-on",:style=>"height:10%;width:100px"
-        = f.text_field :question,:style=>"height:10%;width:70%"
+        = f.label '密保问题',:class=>"add-on user-on"
+        = f.text_field :question,:class=>"user-input",:placeholder=>'请输入您的密保问题'
         %br
         %br
-        = f.label '密保答案',:class=>"add-on",:style=>"height:10%;width:100px"
-        = f.text_field :answer,:style=>"height:10%;width:70%"
+        = f.label '密保答案',:class=>"add-on user-on"
+        = f.text_field :answer,:class=>"user-input",:placeholder=>'请输入您的密保答案'
         %br
         %div(style="text-align:center;")
         %br

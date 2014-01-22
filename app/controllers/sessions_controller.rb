@@ -2,7 +2,7 @@
 class SessionsController < ApplicationController
 
   def new
-    flash[:error]=''
+    @error=''
   end
 
   def errors
@@ -13,11 +13,11 @@ class SessionsController < ApplicationController
     case User.name_empty?(params)
       when "error"
         @error="true"
-       return render 'new'
+        return render 'new'
       when 'name_empty'
         @error="name_empty"
         return render "new"
-      when  'password_empty'
+      when 'password_empty'
         @error="password_empty"
         return render "new"
       else
@@ -27,11 +27,11 @@ class SessionsController < ApplicationController
 
   def login_in(message)
     if message[:name]=="admin"
-        session[:admin]=User.name_empty?(params)[:session]
-        return redirect_to admin_path(message[:message])
+      session[:admin]=User.name_empty?(params)[:session]
+      return redirect_to admin_path(message[:message])
     else
-        session[:user]=message[:session]
-        return redirect_to user_path(message[:message])
+      session[:user]=message[:session]
+      return redirect_to user_path(message[:message])
     end
   end
 

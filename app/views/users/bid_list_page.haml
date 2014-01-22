@@ -1,15 +1,15 @@
 =render "layouts/header"
-%div(style="background-color:#e8e8e8;width:700px;height:50px;width:100%" )
-  %div(style="height:25px;margin-top:12px;position:absolute;margin-left:3%" )
+%div(class="user-div-3" )
+  %div(class="user-div-4" )
     =link_to '首页' ,user_path(@id)
     %span(style="color:gray") / 竞价列表
-%div(class="index-action" style="width:1050px;height:480px;margin-left:10%;margin-top:2%;padding:0px" )
-  %div(style="margin-left:1px;margin-top:10px;background-color:#F0F0F0;height:50px"  )
-    %span(class="header-left" style="font-size:16px;margin-top:8px;margin-left:10px" )
+%div(class="index-action user-list")
+  %div(class="user-list-header"  )
+    %span(class="header-left user-header-left"  )
       竞价列表
-    %div(class="header-right" style="font-size:16px;margin-top:8px;margin-right:10px")
+    %div(class="header-right user-header-right")
       =link_to "报名列表",users_sign_up_page_path(@activity_name)
-  %table(class="table table-style"style="margin-top:1px;position:absolute;top:7%" )
+  %table(class="table table-style user-table" )
     %tbody
       %tr
         %th 编号
@@ -30,6 +30,6 @@
                 = '/'
                 =t.sign_up_number
             %br
-    %div(style='bottom:-10px;width:100%;height:32px;position:absolute;')
-      %div(style="font-size:12px;right:5%;position:absolute;" )
+    %div(class="will_paginate-div")
+      %div(class="will-paginate")
         =will_paginate@bid_list ,{:previous_label =>'<<',:next_label => '>>'}

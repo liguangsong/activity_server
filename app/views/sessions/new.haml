@@ -1,27 +1,23 @@
 %h1活动通
-%div(class="index-action" style="text-align:center;width:550px;height:100%;background-color:#e8e8e8;margin-left:30%;margin-top:5%;padding:20px" )
-  %h2(class="header-left"style="margin-left:5px;margin-top:10px;" )
+%div(class="index-action user-div-5" )
+  %h2(class="header-left session-header-left" )
     用户登陆
-  %h5(style="position:absolute;right:10%;margin-top:10px")
+  %h5(class="user-h5")
     = link_to "用户注册", new_user_path
-  %h5(class="footer" style="position:absolute;right:10%;margin-top:200px"  )
+  %h5(class="footer session-footer-right"  )
     = link_to "忘记密码" ,users_forget_password_page_path
   %br
   %div(class="index-login"style="margin-top:50px" )
     %div(class="input-prepend"style="margin:30px")
       = form_for (:session), url:sessions_path do |f|
-        = f.label '帐  号',:class=>"add-on",:style=>"height:10%"
-        = f.text_field :name,:style=>"height:10%;width:70%",:placeholder=>'请输入您的账号'
+        = f.label '帐  号',:class=>"user-on add-on",:style=>"height:10%"
+        = f.text_field :name,:class=>"user-input",:placeholder=>'请输入您的账号'
         %br
         %br
-        = f.label "密  码",:class=>"add-on",:style=>"height:10%"
-        = f.text_field :password ,:type=>"password",:style=>"height:10%;width:70%",:placeholder=>'请输入您的密码'
+        = f.label "密  码",:class=>"user-on add-on",:style=>"height:10%"
+        = f.text_field :password ,:type=>"password",:class=>"user-input",:placeholder=>'请输入您的密码'
 
         %div(style="text-align:center;")
         %br
         = f.submit "登  录", class: "btn-primary",:style=>"width:25%"
-    -if flash[:error]
-      .label-warning(style="width:70%;margin-left:15%;background-color:#FFE4E1;" )
-        %p(style="color:#7E4F05;font-size:16px" )
-          =flash[:error]
-
+    =render 'layouts/error'

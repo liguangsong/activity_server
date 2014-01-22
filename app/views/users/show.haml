@@ -1,12 +1,12 @@
 =render "layouts/header"
-%div(class="index-action" style="width:1050px;height:480px;margin-left:10%;margin-top:2%;padding:0px" )
-  %div(style="margin-left:1px;margin-top:10px;background-color:#F0F0F0;height:90px"  )
-    %span(class="header-left" style="font-size:16px;margin-top:8px;margin-left:10px" )
+%div(class="index-action user-show-div-1" )
+  %div(class="user-result" )
+    %span(class="header-left user-header-left")
       活动信息
-  %div(class="header-right" style="font-size:16px;margin-top:8px;margin-right:10px")
+  %div(class="header-right user-header-right")
     %button(disabled='@disabled')
       =link_to "同步展示",users_synchronous_show_path
-  %table(class="table table-style"style="margin-top:1px;position:absolute;top:7%" )
+  %table(class="table table-style user-table" )
     %tbody
       %tr
         %th 编号
@@ -28,6 +28,6 @@
               %th
                 =link_to t.bid_number ,users_bid_list_page_path(t.activity_name)
             %br
-    %div(style='bottom:-10px;width:100%;height:32px;position:absolute;')
-      %div(style="font-size:12px;right:5%;position:absolute;" )
+    %div(class="will_paginate-div")
+      %div(class="will-paginate")
         =will_paginate@activity ,{:previous_label =>'<<',:next_label => '>>'}

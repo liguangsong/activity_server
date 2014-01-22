@@ -3,44 +3,6 @@ class UsersController < ApplicationController
 
   before_action :check_user_login, only: [:show, :bid_list_page, :sign_up_page, :bidding_page, :synchronous_show, :synchronous_page]
 
-  def new
-    flash[:error]=''
-    @name = params[:format]
-    @user=User.new
-  end
-
-  def create
-    @user = User.new(user_params)
-    if User.find_by(name: user_params[:name])==nil
-      return repair_password
-    end
-    return user_name_exist
-  end
-
-  def repair_password
-    if user_params[:password]==user_params[:password_confirmation]
-      return user_is_or_not_save
-    else
-      flash[:error]="两次密码不一致"
-      render 'new'
-    end
-  end
-
-  def user_is_or_not_save
-    if @user.save
-      session[:user]=@user[:name]
-      redirect_to user_path(@user[:id])
-      return
-    else
-      render 'new'
-    end
-  end
-
-  def user_name_exist
-    flash[:error]='用户名已经存在'
-    render 'new'
-  end
-
   def quit
     session[:user]=nil;
     redirect_to new_session_path;
@@ -49,6 +11,36 @@ class UsersController < ApplicationController
   def check_user_login
     if session[:user]==nil
       redirect_to new_session_path
+    end
+  end
+
+  def new
+    @error=''
+    @name = params[:format]
+    @user=User.new
+  end
+
+  def create
+    @user=User.new(user_params)
+    case User.name_is_or_not_exist(user_params)
+      when "user_name_exist"
+        @error="user_name_exist"
+        render 'new'
+      when "two_password_not_same"
+        @error="two_password_not_same"
+        render 'new'
+      when "else"
+        save
+    end
+  end
+
+  def save
+    @user=User.new(user_params)
+    if @user.save
+      session[:user]=@user["name"]
+      return redirect_to user_path(@user["id"])
+    else
+      render 'new'
     end
   end
 
@@ -63,7 +55,7 @@ class UsersController < ApplicationController
 
   def confirm_user_name
     if params[:users][:name]==''
-      flash[:error]='账号不能为空'
+      @error='name_empty'
       render 'forget_password_page'
     else
       user_name_is_or_not_exist
@@ -76,13 +68,13 @@ class UsersController < ApplicationController
       session[:id_of_the_forget_password_user]=@user[:id]
       return redirect_to users_compare_question_page_path
     else
-      flash[:error]='账号不存在'
+      @error='name_no_exit'
       render 'forget_password_page'
     end
   end
 
   def compare_question_page
-    flash[:error]=''
+    @error=''
     @user=User.find_by(id: session[:id_of_the_forget_password_user])
   end
 
@@ -91,13 +83,13 @@ class UsersController < ApplicationController
     if @user[:answer]==params[:users][:answer]
       return redirect_to users_change_password_page_path
     else
-      flash[:error]='密保答案不正确'
+      @error='answer_error'
       render 'compare_question_page'
     end
   end
 
   def change_password_page
-    flash[:error]=''
+    @error=""
     @user=User.find_by(id: session[:id_of_the_forget_password_user])
   end
 
@@ -108,7 +100,7 @@ class UsersController < ApplicationController
       @user[:password_confirmation]=params[:users][:password_confirmation]
       change_password_is_or_not_save
     else
-      flash[:error]="两次密码不一致"
+      @error="two_password_not_same"
       render 'change_password_page'
     end
   end
